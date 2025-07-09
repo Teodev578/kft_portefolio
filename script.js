@@ -147,3 +147,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+/* ======================================================== */
+/*             GESTION DES DIALOGUES (MODALS)               */
+/* ======================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+
+    const projectCards = document.querySelectorAll('.project-card');
+    const closeButtons = document.querySelectorAll('.dialog-close');
+    const dialogs = document.querySelectorAll('.dialog');
+
+    // Fonction pour ouvrir un dialogue
+    const openDialog = (dialog) => {
+        if (dialog) {
+            dialog.classList.add('is-open');
+            document.body.style.overflow = 'hidden'; // Empêche le scroll en arrière-plan
+        }
+    };
+
+    // Fonction pour fermer un dialogue
+    const closeDialog = (dialog) => {
+        if (dialog) {
+            dialog.classList.remove('is-open');
+            document.body.style.overflow = ''; // Rétablit le scroll
+        }
+    };
+
+    // Ouvre le dialogue au clic sur une carte
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const targetId = card.dataset.dialogTarget;
+            const dialog = document.querySelector(targetId);
+            openDialog(dialog);
+        });
+    });
+
+    // Ferme le dialogue au clic sur le bouton de fermeture
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const dialog = button.closest('.dialog');
+            closeDialog(dialog);
+        });
+    });
+
+    // Ferme le dialogue au clic sur le fond (l'overlay)
+    dialogs.forEach(dialog => {
+        dialog.addEventListener('click', (event) => {
+            if (event.target === dialog) {
+                closeDialog(dialog);
+            }
+        });
+    });
+    
+    // Ferme le dialogue avec la touche "Echap"
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            const openDialog = document.querySelector('.dialog.is-open');
+            if (openDialog) {
+                closeDialog(openDialog);
+            }
+        }
+    });
+
+});

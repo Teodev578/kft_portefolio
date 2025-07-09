@@ -199,6 +199,148 @@
     </div>
 </section>
 
+<!-- ======================================================== -->
+<!--           SECTION MES PROJETS (VERSION CORRIGÉE)         -->
+<!-- ======================================================== -->
+<section id="projets" class="projects-section">
+    <!-- Le container ne contient plus que l'en-tête, pour le centrer -->
+    <div class="projects-container">
+        <div class="projects-header">
+            <span class="header-symbol">*</span>
+            <div class="header-text">
+                <h2 class="projects-title">MES PROJETS</h2>
+                <p>Voici une sélection de projets que j'ai développés dans le cadre de mon apprentissage en développement.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- La liste des projets est maintenant en dehors du container principal -->
+    <div class="projects-list">
+        <!-- Chaque carte est maintenant dans un container pour centrer son contenu -->
+        <article class="project-card" data-dialog-target="#dialog-projet-pro">
+            <div class="project-card-inner-container">
+                <div class="card-number">#1</div>
+                <div class="card-content">
+                    <div class="card-info">
+                        <h3 class="card-title">GESTION DE QUINCAILLERIE</h3>
+                        <div class="card-tags">
+                            <span>Flutter</span> | <span>Firebase</span> | <span>Gestion de stock</span> | <span>Facturation</span>
+                        </div>
+                    </div>
+                    <div class="card-action">en savoir plus -></div>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card" data-dialog-target="#dialog-projet-perso">
+            <div class="project-card-inner-container">
+                <div class="card-number">#2</div>
+                <div class="card-content">
+                    <div class="card-info">
+                        <h3 class="card-title">SITE PORTFOLIO</h3>
+                        <div class="card-tags">
+                            <span>HTML5</span> | <span>CSS3</span> | <span>JavaScript</span> | <span>Responsive Design</span>
+                        </div>
+                    </div>
+                    <div class="card-action">en savoir plus -></div>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card" data-dialog-target="#dialog-projet-scolaire">
+            <div class="project-card-inner-container">
+                <div class="card-number">#3</div>
+                <div class="card-content">
+                    <div class="card-info">
+                        <h3 class="card-title">ALGORITHME IA</h3>
+                        <div class="card-tags">
+                            <span>Python</span> | <span>Scikit-learn</span> | <span>Analyse de données</span>
+                        </div>
+                    </div>
+                    <div class="card-action">en savoir plus -></div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- ======================================================== -->
+<!--              BOÎTES DE DIALOGUE (MODALS)                 -->
+<!-- ======================================================== -->
+<!-- A placer juste avant la balise de fermeture </body> -->
+
+<!-- ======================================================== -->
+<!--     BOÎTES DE DIALOGUE (STRUCTURE MISE À JOUR)           -->
+<!-- ======================================================== -->
+
+<!-- DIALOGUE POUR PROJET PROFESSIONNEL (NOUVELLE STRUCTURE) -->
+<div class="dialog" id="dialog-projet-pro">
+    <div class="dialog-content">
+        <!-- Le header contient maintenant l'image et le texte -->
+         
+        <header class="dialog-header">
+            <div class="dialog-header-visual">
+                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop" alt="Interface de l'application de gestion">
+            </div>
+            <div class="dialog-header-text">
+                <h1 class="dialog-title"><span>*1</span> Projet Professionnel :</h1>
+                <p class="dialog-summary">
+                    Développement d'une application de bureau et mobile complète pour la gestion des opérations d'une quincaillerie, utilisée en conditions réelles pour optimiser les ventes et les stocks.
+                </p>
+                <div class="dialog-tags">
+                    <span>Flutter</span> | <span>Firebase</span> | <span>Gestion de stock</span> | <span>Facturation</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="dialog-body">
+            <p>La quincaillerie faisait face à des pertes de temps considérables dues à une gestion manuelle des stocks et à un processus de facturation archaïque. L'objectif était de créer un outil centralisé, simple d'utilisation, pour automatiser ces tâches et fournir des statistiques de vente claires. J'ai conçu et développé une application multiplateforme (Windows & Android) avec Flutter. L'application permet de scanner des produits, générer des factures PDF, suivre l'état des stocks en temps réel et consulter un tableau de bord avec les chiffres de vente.</p>
+            <p>L'utilisation de Firebase comme backend a permis une synchronisation instantanée des données entre les différents appareils, assurant une cohérence parfaite de l'information. Ce projet a été une excellente opportunité de mettre en pratique des compétences en développement d'applications complètes, de la conception de l'interface utilisateur à la gestion de la base de données en temps réel.</p>
+        </div>
+        
+        <!-- Le bouton de fermeture est maintenant à la fin -->
+        <button class="dialog-close">X Fermer</button>
+    </div>
+</div>
+
+<!-- Mettez à jour les autres dialogues avec la même structure si nécessaire -->
+
+<!-- DIALOGUE POUR PROJET PORTFOLIO -->
+<div class="dialog" id="dialog-projet-perso">
+    <div class="dialog-content">
+        <button class="dialog-close" aria-label="Fermer la fenêtre">×</button>
+        <header class="dialog-header">
+            <h1 class="dialog-title"><span>#2</span> Projet Personnel : Site Portfolio</h1>
+            <p class="dialog-summary">
+                Création de ce site portfolio pour présenter mes compétences et projets. L'accent a été mis sur un design moderne, une expérience utilisateur fluide et une parfaite responsivité.
+            </p>
+            <div class="dialog-tags">
+                <span>HTML5</span> | <span>CSS3</span> | <span>JavaScript</span> | <span>Responsive Design</span>
+            </div>
+        </header>
+        <div class="dialog-body">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop" alt="Code source du site portfolio">
+            <h4>Objectifs</h4>
+            <p>Le but était de construire un site vitrine de A à Z, en utilisant des technologies web fondamentales et en appliquant les meilleures pratiques de développement : code sémantique, CSS modulaire avec des variables, et JavaScript non-obstrusif pour les interactions.</p>
+            <h4>Caractéristiques Notables</h4>
+            <ul>
+                <li><strong>Thème Clair/Sombre :</strong> Une bascule de thème persistante pour le confort visuel de l'utilisateur.</li>
+                <li><strong>Design Responsive :</strong> Le site s'adapte élégamment à toutes les tailles d'écrans, du mobile au grand écran de bureau.</li>
+                <li><strong>Animations subtiles :</strong> Des transitions et animations légères pour dynamiser la navigation sans nuire à la performance.</li>
+                <li><strong>Formulaire de contact fonctionnel :</strong> Intégration d'un service tiers (Web3Forms) pour une gestion simple et efficace des messages.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- DIALOGUE POUR PROJET SCOLAIRE -->
+<div class="dialog" id="dialog-projet-scolaire">
+    <div class="dialog-content">
+        <p>Le contenu détaillé du projet scolaire apparaîtra ici.</p>
+        <button class="dialog-close">X Fermer</button>
+    </div>
+</div>
+
         <!-- ======================================================== -->
         <!--                SECTION CONTACT (NOUVELLE VERSION)        -->
         <!-- ======================================================== -->

@@ -961,3 +961,238 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
         padding-right: 2rem;
     }
 }
+
+/* ======================================================== */
+/*           SECTION MES PROJETS (VERSION FINALE)           */
+/* ======================================================== */
+.projects-section {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-top: var(--header-height);
+    padding-bottom: 4rem;
+}
+
+.projects-container {
+    width: 100%;
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 0 var(--site-margin);
+}
+
+.projects-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.header-symbol {
+    font-size: 2rem;
+    color: var(--accent-color);
+    line-height: 1.2;
+}
+
+.projects-title {
+    font-family: var(--font-headline);
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: 0.9;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.projects-header p {
+    font-family: var(--font-body);
+    max-width: 65ch;
+}
+
+.projects-list {
+    width: 100%;
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.project-card {
+    border-bottom: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.project-card:last-child {
+    border-bottom: none;
+}
+
+.project-card:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+body.dark-mode .project-card:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.project-card-inner-container {
+    width: 100%;
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 2rem var(--site-margin);
+    display: flex;
+    align-items: center;
+}
+
+.card-number {
+    font-family: var(--font-headline);
+    font-size: 6rem;
+    font-weight: 400;
+    color: var(--accent-color);
+    line-height: 1;
+    margin-right: 2.5rem;
+    padding-right: 2.5rem;
+    border-right: 2px solid var(--border-color);
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.card-title {
+    font-family: var(--font-headline);
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.card-tags {
+    font-family: var(--font-body);
+}
+
+.card-action {
+    font-family: var(--font-body);
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+@media (max-width: 992px) {
+    .project-card-inner-container { padding: 1.5rem var(--site-margin); }
+    .card-number { font-size: 3rem; margin-right: 1.5rem; padding-right: 1.5rem; }
+    .card-content { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .card-title { font-size: 1.5rem; }
+    .card-tags { display: none; }
+    .card-action { margin-left: 0; margin-top: 0.5rem; }
+}
+
+
+/* ======================================================== */
+/*         BOÎTE DE DIALOGUE (VERSION FINALE CORRIGÉE)      */
+/* ======================================================== */
+.dialog {
+    position: fixed;
+    inset: 0;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 3rem var(--site-margin);
+}
+
+.dialog.is-open {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* SOLUTION : On retire display:flex du contenu pour éviter les bugs de calcul de hauteur. */
+.dialog-content {
+    width: 100%;
+    max-width: 1200px;
+    border: 2px solid var(--border-color);
+    padding: 2.5rem;
+}
+
+.dialog-header {
+    display: flex;
+    gap: 2.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.dialog-header-visual {
+    flex: 0 0 250px;
+}
+
+.dialog-header-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid var(--border-color);
+}
+
+.dialog-header-text {
+    flex-grow: 1;
+}
+
+.dialog-title {
+    font-family: var(--font-headline);
+    font-size: 3.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.dialog-title span {
+    color: var(--accent-color);
+}
+
+.dialog-summary {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.dialog-tags {
+    font-family: var(--font-body);
+}
+
+.dialog-body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* SOLUTION : On utilise float pour aligner le bouton sans perturber la hauteur du conteneur. */
+.dialog-close {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    margin-top: 2rem;
+    float: right;
+    clear: both;
+}
+
+@media (max-width: 768px) {
+    .dialog { padding: 1.5rem; }
+    .dialog-content { padding: 1.5rem; }
+    .dialog-header { flex-direction: column; }
+    .dialog-header-visual { flex-basis: auto; width: 100%; max-width: 250px; }
+    .dialog-title { font-size: 2.5rem; }
+}
