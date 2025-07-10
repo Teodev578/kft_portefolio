@@ -460,123 +460,90 @@ body.dark-mode .image-wrapper:hover img {
 
 
 /* ======================================================== */
-/*               STYLES POUR LES AUTRES SECTIONS            */
+/*                NOUVEAUX STYLES POUR #SERVICES            */
 /* ======================================================== */
-.section { 
-    padding: 6rem 0; 
-    background-color: var(--bg-color); 
-    transition: background-color 0.3s ease;
+
+/* Le conteneur principal de la section */
+.services-new {
+    padding: 8rem var(--site-margin);
+    background-color: var(--section-alt-bg); /* Utilisons le fond alternatif pour contraster */
+    overflow: hidden; /* Empêche les débordements d'animations */
 }
 
-.section-alt { 
-    background-color: var(--section-alt-bg); 
-}
-
-.section-title { 
-    font-size: clamp(2rem, 5vw, 3rem); 
-    text-align: center; 
-    margin-bottom: 4rem; 
-}
-
-.section-title::after { 
-    content: ''; 
-    display: block; 
-    width: 60px; 
-    height: 4px; 
-    background-color: var(--primary-color); 
-    margin: 0.5rem auto 0; 
-    transition: background-color 0.3s ease;
-}
-
-.section-title-left { 
-    font-size: clamp(2rem, 5vw, 3rem); 
-    text-align: left; 
-    margin-bottom: 2rem; 
-}
-
-.services-layout { 
-    display: grid; 
+/* Le conteneur grid */
+.services-container-new {
+    display: grid;
+    /* On définit 2 colonnes de tailles inégales */
     grid-template-columns: 1fr 1.2fr; 
-    gap: 3rem; 
-    align-items: center; 
+    gap: 2rem 4rem; /* 2rem de gap vertical, 4rem horizontal */
+    
+    /* C'est ici que la magie opère : on définit les zones */
+    grid-template-areas:
+        "title title"
+        "image list"
+        "image list";
 }
 
-.services-mockup img { 
-    width: 100%; 
-    border-radius: 8px; 
-    box-shadow: 0 10px 30px var(--shadow-color);
-    transition: box-shadow 0.3s ease;
+/* --- Placement des éléments dans la grille --- */
+
+.services-main-title {
+    grid-area: title; /* Le titre prend toute la zone "title" */
+    font-family: var(--font-headline);
+    font-size: clamp(4rem, 12vw, 10rem);
+    color: var(--accent-color);
+    line-height: 0.9;
+    margin-bottom: 3rem;
+    /* Optionnel : ajoutez l'effet glitch au scroll (nécessite JS) */
+    /* text-shadow: -2px 0 #49a5da, 2px 2px var(--text-color); */
 }
 
-.service-card { 
-    display: flex; 
-    gap: 1.5rem; 
-    align-items: flex-start; 
-    margin-bottom: 1.5rem; 
+.services-image-wrapper {
+    grid-area: image; /* L'image prend la zone "image" */
 }
 
-.service-icon { 
-    flex-shrink: 0; 
-    color: var(--primary-color);
-    transition: color 0.3s ease;
+.services-list {
+    grid-area: list; /* La liste prend la zone "list" */
+    display: flex;
+    flex-direction: column;
 }
 
-.service-card p { 
-    color: var(--text-light); 
+/* Amélioration de la liste des services */
+.service-item {
+    /* On remplace les <hr> par des bordures, plus contrôlables */
+    border-bottom: 1px solid var(--border-color);
+    padding: 2rem 0;
+    transition: background-color 0.2s ease;
 }
 
-.projets-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 2rem; 
+.service-item:first-child {
+    border-top: 1px solid var(--border-color);
 }
 
-.project-card {
-    background-color: var(--bg-color);
-    border-radius: 0px;
-    overflow: hidden;
-    box-shadow: none; /* Shadow removed */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+.service-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
 }
 
-
-.project-image img { 
-    width: 100%; 
-    display: block; 
+.service-item p {
+    max-width: 60ch;
+    color: var(--text-light);
 }
 
-.project-info { 
-    padding: 1.5rem; 
+/* Le lien "A propos de moi" */
+.about-me-link {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+    transition: color 0.3s, border-color 0.3s;
 }
 
-.project-info p { 
-    color: var(--text-light); 
-    margin: 0.5rem 0 1.5rem; 
-}
-
-.btn-link { 
-    color: var(--primary-color); 
-    font-weight: 700; 
-}
-
-.animate-on-scroll { 
-    opacity: 0; 
-    transform: translateY(30px); 
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
-}
-
-.animate-on-scroll.is-visible { 
-    opacity: 1; 
-    transform: translateY(0); 
-}
-
-.site-footer { 
-    padding: 2rem 0; 
-    text-align: center; 
-    font-size: 0.9rem; 
-    color: var(--text-light); 
-    background-color: var(--section-alt-bg);
-    transition: background-color 0.3s ease;
+.about-me-link:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 /* ======================================================== */
