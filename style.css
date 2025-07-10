@@ -261,6 +261,18 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
     margin-bottom: 25vh; 
 }
 
+/* Ajoutez ces keyframes à votre CSS */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+  52% { opacity: 1; }
+  54% { opacity: 0.95; }
+  56% { opacity: 1; }
+  80% { opacity: 1; }
+  82% { opacity: 0.85; }
+  84% { opacity: 1; }
+}
+
 /* Changez légèrement le style du titre */
 .main-headline {
     font-family: var(--font-headline);
@@ -274,6 +286,10 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
     position: relative;
     color: transparent; /* On cache le texte de base */
     display: inline-block;
+
+    animation: flicker 4s infinite linear;
+    animation-delay: 2s; /* Laisse le temps au visiteur de lire avant que ça bouge */
+
 }
 
 /* Le texte visible */
@@ -337,7 +353,7 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
 }
 
 .hero-link:hover {
-    color: var(--bg-color); /* Inversez la couleur du texte */
+    color: var(--accent-color); /* Inversez la couleur du texte */
     background-color: var(--text-color); /* Le fond prend la couleur du texte */
     border-color: var(--text-color);
 }
