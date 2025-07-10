@@ -200,7 +200,7 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
 
 
 /* ========================================================================= */
-/*                               SECTION Acceuil                             */
+/*                               SECTION HERO                                */
 /* ========================================================================= */
 .hero {
     min-height: 100vh;
@@ -227,6 +227,7 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
     margin-bottom: 25vh; 
 }
 
+/* Changez légèrement le style du titre */
 .main-headline {
     font-family: var(--font-headline);
     font-weight: 400;
@@ -234,6 +235,49 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
     line-height: 0.9;
     text-transform: uppercase;
     margin-bottom: 2rem;
+    
+    /* Ajouts pour l'animation */
+    position: relative;
+    color: transparent; /* On cache le texte de base */
+    display: inline-block;
+}
+
+/* Le texte visible */
+.main-headline::before {
+    content: 'DÉVELOPPEUR';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+    overflow: hidden;
+    animation: revealText 1s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards; /* 0.5s de délai */
+    width: 0%; /* Commence masqué */
+}
+
+/* La barre de révélation */
+.main-headline::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%; /* Commence avec une largeur de 0 */
+    height: 100%;
+    background-color: var(--accent-color);
+    animation: revealBar 1s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+}
+
+@keyframes revealText {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes revealBar {
+    0% { left: 0; width: 0%; }
+    50% { left: 0; width: 100%; }
+    100% { left: 100%; width: 0%; }
 }
 
 .intro-text {
@@ -248,14 +292,26 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
     gap: 1.2rem;
 }
 
+/* Remplacez le style de .hero-link */
 .hero-link {
     font-size: 1.2rem;
-    padding-bottom: 2px;
+    padding: 0.3rem 0.5rem; /* Ajoutez un peu de padding */
     border-bottom: 2px solid var(--border-color);
+    transition: color 0.2s step-end, background-color 0.2s step-end; /* Transition brusque */
+    background-color: transparent;
+    color: var(--text-color);
 }
 
 .hero-link:hover {
-    color: var(--accent-color);
+    color: var(--bg-color); /* Inversez la couleur du texte */
+    background-color: var(--text-color); /* Le fond prend la couleur du texte */
+    border-color: var(--text-color);
+}
+
+/* Pour le lien de contact, on peut utiliser la couleur d'accent */
+.hero-link.contact-link:hover {
+    color: var(--bg-color);
+    background-color: var(--accent-color);
     border-color: var(--accent-color);
 }
 
@@ -265,11 +321,42 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
     gap: 1.5rem;
 }
 
+.image-wrapper {
+    position: relative; 
+    background-color: var(--accent-color); /* Le fond reste nécessaire pour l'effet au survol */
+    /* On ajoute un overflow:hidden pour un look plus net si on ajoute un border-radius */
+    overflow: hidden; 
+}
+
 .image-wrapper img {
     width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
+    
+    /* CHANGEMENT 1 : L'état "normal" est maintenant l'état par défaut */
+    mix-blend-mode: normal; 
+    
+    /* La transition permet un changement en douceur si une propriété animatable est utilisée */
+    /* mix-blend-mode n'est pas "animatable", le changement sera donc brutaliste et instantané, ce qui est parfait pour votre style ! */
+    transition: mix-blend-mode 0.3s ease;
+}
+
+/* CHANGEMENT 2 : L'effet de couleur s'applique uniquement au survol */
+.image-wrapper:hover img {
+    mix-blend-mode: multiply; 
+}
+
+/* --- GESTION DU MODE SOMBRE --- */
+
+/* Par défaut en mode sombre, l'image est aussi normale */
+body.dark-mode .image-wrapper img {
+    mix-blend-mode: normal;
+}
+
+/* L'effet "screen" s'applique au survol en mode sombre */
+body.dark-mode .image-wrapper:hover img {
+    mix-blend-mode: screen;
 }
 
 .visual-caption {
@@ -295,6 +382,31 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
 .scroll-down-link:hover {
     color: var(--accent-color);
 }
+
+/* Ajoutez ces keyframes à votre CSS */
+@keyframes appear {
+  from { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Appliquez l'animation aux éléments avec un délai différent pour chaque */
+/* Assurez-vous qu'ils sont initialement invisibles pour que l'animation fonctionne */
+.main-headline, .intro-text, .hero-actions, .hero-visual {
+    opacity: 0;
+    animation: appear 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards; /* Une courbe d'accélération franche */
+}
+
+/* Décalages (c'est la clé !) */
+.main-headline { animation-delay: 0.2s; }
+.intro-text { animation-delay: 0.4s; }
+.hero-actions { animation-delay: 0.6s; }
+.hero-visual { animation-delay: 0.4s; }
 
 
 /* ======================================================== */
