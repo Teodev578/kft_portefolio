@@ -130,10 +130,6 @@ body.dark-mode header.scrolled {
     gap: 2.5rem;
 }
 
-.main-nav {
-    /* Styles pour la nav desktop sont dans .header-right */
-}
-
 .nav-links { 
     display: flex; 
     list-style: none; 
@@ -204,7 +200,7 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
 
 
 /* ========================================================================= */
-/*                               SECTION HERO                                */
+/*                               SECTION Acceuil                             */
 /* ========================================================================= */
 .hero {
     min-height: 100vh;
@@ -291,7 +287,15 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
 
 .scroll-down-link {
     font-family: var(--font-body);
+    font-size: 1.1rem;
+    align-self: flex-start;
+    transition: color 0.3s ease;
 }
+
+.scroll-down-link:hover {
+    color: var(--accent-color);
+}
+
 
 /* ======================================================== */
 /*               STYLES POUR LES AUTRES SECTIONS            */
@@ -365,13 +369,14 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
     gap: 2rem; 
 }
 
-.project-card { 
-    background-color: var(--section-bg); 
-    border-radius: 8px; 
-    overflow: hidden; 
-    box-shadow: 0 4px 15px var(--shadow-color);
+.project-card {
+    background-color: var(--bg-color);
+    border-radius: 0px;
+    overflow: hidden;
+    box-shadow: none; /* Shadow removed */
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .project-image img { 
     width: 100%; 
@@ -570,9 +575,6 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
 /*             RESPONSIVE & MENU MOBILE                     */
 /* ======================================================== */
 @media (max-width: 992px) {
-    .header-actions {
-        /* On garde les actions (thème + burger) visibles */
-    }
     
     .header-right .main-nav {
         display: none; /* Cache la nav desktop */
@@ -970,6 +972,17 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
     color: var(--text-color);
     padding-top: var(--header-height);
     padding-bottom: 4rem;
+}
+
+.projects-list-wrapper {
+    padding: 0 var(--site-margin); /* Applique le même padding que le reste du site */
+}
+
+/* Liste des projets avec bordures pleine largeur */
+.projects-list {
+    width: 100%;
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
 }
 
 .projects-container {
