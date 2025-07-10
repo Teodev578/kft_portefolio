@@ -50,10 +50,12 @@ body.dark-mode {
 }
 
 html { 
+    cursor: none;
     scroll-behavior: smooth; 
 }
 
 body {
+    cursor: none;
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-body);
@@ -71,12 +73,44 @@ body {
 
 h1, h2, h3, h4 { 
     font-weight: 700; 
+    cursor: none;
 }
 
 a { 
     color: inherit; 
     text-decoration: none; 
     transition: color 0.3s ease; 
+    cursor: none;
+}
+
+/* Le point central - notre curseur principal */
+.cursor-dot {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-color);
+    border-radius: 50%; /* Pour un cercle, retirez pour un carré brutaliste */
+    pointer-events: none; /* TRÈS IMPORTANT: pour que l'on puisse cliquer à travers */
+    transform: translate(-50%, -50%); /* Pour centrer le point sur le curseur */
+    transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out; /* Pour les animations de survol */
+}
+
+/* La bulle qui suit - notre effet de traînée */
+.cursor-bubble {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--text-color); /* Un contour, pas un fond */
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out, width 0.3s ease-out, height 0.3s ease-out, border-radius 0.3s ease-out; /* Vitesse de suivi de la bulle */
 }
 
 /* ======================================================== */

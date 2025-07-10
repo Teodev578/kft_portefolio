@@ -210,3 +210,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorBubble = document.querySelector('.cursor-bubble');
+    
+    let dotX = 0, dotY = 0;
+    let bubbleX = 0, bubbleY = 0;
+
+    // Écouteur pour le mouvement de la souris
+    window.addEventListener('mousemove', (e) => {
+        dotX = e.clientX;
+        dotY = e.clientY;
+    });
+
+    // Fonction d'animation pour fluidifier le mouvement
+    const animateCursor = () => {
+        // Le point (dot) est mis à jour instantanément pour être réactif
+        cursorDot.style.left = `${dotX}px`;
+        cursorDot.style.top = `${dotY}px`;
+
+        // La bulle (bubble) se déplace progressivement vers la position du point
+        // C'est ce qui crée l'effet de "retard" ou de "traînée"
+        bubbleX += (dotX - bubbleX) * 0.15; // 0.15 est le facteur de "lissage"
+        bubbleY += (dotY - bubbleY) * 0.15;
+
+        cursorBubble.style.left = `${bubbleX}px`;
+        cursorBubble.style.top = `${bubbleY}px`;
+
+        requestAnimationFrame(animateCursor);
+    };
+
+    animateCursor();
+});
