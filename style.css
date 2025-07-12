@@ -47,6 +47,8 @@ body.dark-mode {
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
+    /* CORRECTION 2 : On applique le curseur personnalisé à tout par défaut */
+    cursor: none;
 }
 
 html { 
@@ -547,7 +549,7 @@ body.dark-mode .image-wrapper:hover img {
 }
 
 /* ======================================================== */
-/*           NOUVELLE SECTION CONTACT (DESIGN 2024)         */
+/*           NOUVELLE SECTION CONTACT (RESPONSIVE)          */
 /* ======================================================== */
 
 .contact-section-new {
@@ -559,13 +561,14 @@ body.dark-mode .image-wrapper:hover img {
     align-items: center;
 }
 
+/* --- Layout par défaut (Mobile First) : une seule colonne --- */
 .contact-container-new {
     width: 100%;
     max-width: var(--site-max-width);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 5rem;
+    grid-template-columns: 1fr; /* Une seule colonne par défaut */
+    gap: 5rem; /* Espace vertical entre le formulaire et les infos */
     position: relative;
 }
 
@@ -642,18 +645,19 @@ body.dark-mode .image-wrapper:hover img {
 }
 
 .contact-info-col {
-    position: relative;
+    position: relative; /* Contexte de positionnement pour les éléments enfants */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 1.5rem;
+    padding-top: 4rem; /* Espace pour l'astérisque */
 }
 
 .contact-symbol {
     position: absolute;
-    top: -2rem;
+    /* Positionnement adapté pour le layout à une colonne */
+    top: 0;
     right: 0;
-    font-size: 8rem;
+    font-size: 6rem; /* Un peu plus petit sur mobile */
     font-weight: 700;
     color: var(--accent-color);
     line-height: 1;
@@ -689,15 +693,43 @@ body.dark-mode .image-wrapper:hover img {
 
 .contact-background-text {
     font-family: var(--font-headline);
-    font-size: clamp(5rem, 15vw, 12rem);
+    font-size: clamp(4rem, 20vw, 8rem);
     font-weight: 900;
     line-height: 0.8;
     color: var(--text-color);
-    position: absolute;
-    bottom: -2rem;
-    left: 0;
-    z-index: 0;
     user-select: none;
+    /* En mode mobile, on le remet dans le flux normal */
+    position: relative; 
+    margin-top: 4rem;
+}
+
+/* --- Media Query pour les tablettes et desktops --- */
+@media (min-width: 992px) {
+    
+    /* On réactive le layout à deux colonnes */
+    .contact-container-new {
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    /* On restaure le padding et le positionnement absolu pour les grands écrans */
+    .contact-info-col {
+        padding-top: 1.5rem;
+    }
+
+    .contact-symbol {
+        top: -2rem;
+        font-size: 8rem;
+    }
+
+    .contact-background-text {
+        position: absolute; /* On le sort à nouveau du flux */
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+        font-size: clamp(5rem, 10vw, 12rem);
+        margin-top: 0; /* On annule la marge mobile */
+        text-align: right;
+    }
 }
 
 /* ======================================================== */
