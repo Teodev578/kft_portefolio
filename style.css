@@ -30,7 +30,7 @@
 
 /* --- Thème Sombre --- */
 body.dark-mode {
-    --bg-color: #393b38;
+    --bg-color: #201D1D;
     --text-color: #F5F0E8;
     --border-color: #F5F0E8;
     --shadow-color: rgba(255, 255, 255, 0.05);
@@ -355,7 +355,7 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
 }
 
 .hero-link:hover {
-    color: var(--accent-color); /* Inversez la couleur du texte */
+    color: var(--bg-color); /* Inversez la couleur du texte */
     background-color: var(--text-color); /* Le fond prend la couleur du texte */
     border-color: var(--text-color);
 }
@@ -548,6 +548,7 @@ body.dark-mode .image-wrapper:hover img {
     border-color: var(--accent-color);
 }
 
+
 /* ======================================================== */
 /*           NOUVELLE SECTION CONTACT (RESPONSIVE)          */
 /* ======================================================== */
@@ -730,6 +731,48 @@ body.dark-mode .image-wrapper:hover img {
         margin-top: 0; /* On annule la marge mobile */
         text-align: right;
     }
+}
+
+/*
+ * Style de base pour tous les champs du formulaire afin d'assurer la cohérence.
+ */
+.form-group-new input,
+.form-group-new textarea {
+    width: 100%;                      /* Fait en sorte que tous les champs prennent la même largeur */
+    background-color: transparent;      /* Fond transparent pour correspondre au design */
+    border: none;                       /* Supprime toutes les bordures par défaut */
+    border-bottom: 1px solid #6c757d;   /* Ajoute une ligne discrète en bas (couleur gris neutre) */
+    padding: 12px 0;                    /* Ajoute de l'espace intérieur pour le confort de lecture */
+    font-family: inherit;               /* Utilise la même police que le reste de la page */
+    font-size: 1rem;                    /* Taille de police standard */
+    color: #f8f9fa;                     /* Couleur du texte saisi par l'utilisateur (blanc cassé) */
+    margin-bottom: 25px;                /* Espace entre les champs */
+}
+
+/*
+ * Style spécifique pour le textarea.
+ */
+.form-group-new textarea {
+    resize: vertical;                   /* Permet à l'utilisateur de redimensionner le champ, mais seulement verticalement */
+    min-height: 120px;                  /* Définit une hauteur minimale pour qu'il y ait assez de place pour écrire */
+}
+
+/*
+ * Style pour le texte indicatif (placeholder).
+ */
+.form-group-new input::placeholder,
+.form-group-new textarea::placeholder {
+    color: #adb5bd;                     /* Couleur plus discrète pour le placeholder (gris clair) */
+    opacity: 1;                         /* S'assure que la couleur est bien visible */
+}
+
+/*
+ * (Optionnel) Amélioration visuelle lorsque l'utilisateur clique sur un champ.
+ */
+.form-group-new input:focus,
+.form-group-new textarea:focus {
+    outline: none;                      /* Supprime le contour bleu ou orange par défaut des navigateurs */
+    border-bottom-color: var(--accent-color);       /* Change la couleur de la ligne du bas pour indiquer le champ actif (rose/rouge) */
 }
 
 /* ======================================================== */
