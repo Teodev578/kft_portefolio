@@ -137,7 +137,7 @@ header.scrolled {
 }
 
 body.dark-mode header.scrolled {
-    background-color: rgba(57, 59, 56, 0.8); /* Fond sombre avec transparence */
+    background-color: rgba(31, 31, 31, 0.8); /* Fond sombre avec transparence */
 }
 
 .header-container {
@@ -548,6 +548,70 @@ body.dark-mode .image-wrapper:hover img {
     border-color: var(--accent-color);
 }
 
+/* ======================================================== */
+/*          NOUVELLES ANIMATIONS POUR #SERVICES             */
+/* ======================================================== */
+
+/* Keyframe pour un effet de glissement et d'apparition */
+@keyframes slideUpAndFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* On prépare les éléments. Ils sont initialement masqués. */
+/* Le sélecteur .services-main-title est plus complexe pour s'aligner sur l'effet de votre hero */
+.services-main-title,
+.services-image-wrapper,
+.service-item,
+.about-me-link {
+    opacity: 0; /* Important pour que l'animation fonctionne au premier chargement */
+}
+
+/* --- ANIMATION DU TITRE "SERVICES" --- */
+
+.services-new.is-visible .services-main-title {
+    /* On applique l'animation quand la section devient visible */
+    animation: slideUpAndFadeIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    /* On ajoute un petit délai pour que ça ne démarre pas instantanément */
+    animation-delay: 0.1s;
+}
+
+
+/* --- ANIMATION DE L'IMAGE --- */
+
+.services-new.is-visible .services-image-wrapper {
+    animation: slideUpAndFadeIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation-delay: 0.2s; /* Léger décalage par rapport au titre */
+}
+
+
+/* --- ANIMATION EN CASCADE DE LA LISTE DE SERVICES --- */
+
+/* On applique l'animation de base à tous les items quand la section est visible */
+.services-new.is-visible .service-item {
+    animation: slideUpAndFadeIn 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* Puis, on applique un délai croissant à chaque item pour l'effet de cascade */
+.services-new.is-visible .service-item:nth-child(1) { animation-delay: 0.3s; }
+.services-new.is-visible .service-item:nth-child(2) { animation-delay: 0.4s; }
+.services-new.is-visible .service-item:nth-child(3) { animation-delay: 0.5s; }
+.services-new.is-visible .service-item:nth-child(4) { animation-delay: 0.6s; }
+
+
+/* --- ANIMATION FINALE DU LIEN "A PROPOS DE MOI" --- */
+
+.services-new.is-visible .about-me-link {
+    animation: slideUpAndFadeIn 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation-delay: 0.7s; /* Apparaît en dernier */
+}
+
 
 /* ======================================================== */
 /*           NOUVELLE SECTION CONTACT (RESPONSIVE)          */
@@ -741,11 +805,11 @@ body.dark-mode .image-wrapper:hover img {
     width: 100%;                      /* Fait en sorte que tous les champs prennent la même largeur */
     background-color: transparent;      /* Fond transparent pour correspondre au design */
     border: none;                       /* Supprime toutes les bordures par défaut */
-    border-bottom: 1px solid #6c757d;   /* Ajoute une ligne discrète en bas (couleur gris neutre) */
+    border-bottom: 1px solid var(--border-color);   /* Ajoute une ligne discrète en bas (couleur gris neutre) */
     padding: 12px 0;                    /* Ajoute de l'espace intérieur pour le confort de lecture */
     font-family: inherit;               /* Utilise la même police que le reste de la page */
     font-size: 1rem;                    /* Taille de police standard */
-    color: #f8f9fa;                     /* Couleur du texte saisi par l'utilisateur (blanc cassé) */
+    color: var(--text-color);                     /* Couleur du texte saisi par l'utilisateur (blanc cassé) */
     margin-bottom: 25px;                /* Espace entre les champs */
 }
 
@@ -762,7 +826,7 @@ body.dark-mode .image-wrapper:hover img {
  */
 .form-group-new input::placeholder,
 .form-group-new textarea::placeholder {
-    color: #adb5bd;                     /* Couleur plus discrète pour le placeholder (gris clair) */
+    color: var(--text-light);                     /* Couleur plus discrète pour le placeholder (gris clair) */
     opacity: 1;                         /* S'assure que la couleur est bien visible */
 }
 
@@ -774,6 +838,54 @@ body.dark-mode .image-wrapper:hover img {
     outline: none;                      /* Supprime le contour bleu ou orange par défaut des navigateurs */
     border-bottom-color: var(--accent-color);       /* Change la couleur de la ligne du bas pour indiquer le champ actif (rose/rouge) */
 }
+
+/* ======================================================== */
+/*          ANIMATIONS POUR LA SECTION #CONTACT             */
+/* ======================================================== */
+
+/* On prépare tous les éléments de la section en les rendant invisibles */
+.contact-form-col .contact-title-new,
+.contact-form-col .contact-intro-new,
+.contact-form-col .form-group-new,
+.contact-form-col .submit-btn-new,
+.contact-info-col .contact-symbol,
+.contact-info-col .contact-links-new a,
+.contact-info-col .contact-email-new,
+.contact-info-col .contact-background-text {
+    opacity: 0;
+}
+
+/* --- Déclenchement quand la section .contact-section-new est visible --- */
+
+.contact-section-new.is-visible .contact-form-col .contact-title-new,
+.contact-section-new.is-visible .contact-form-col .contact-intro-new,
+.contact-section-new.is-visible .contact-form-col .form-group-new,
+.contact-section-new.is-visible .contact-form-col .submit-btn-new,
+.contact-section-new.is-visible .contact-info-col .contact-symbol,
+.contact-section-new.is-visible .contact-info-col .contact-links-new a,
+.contact-section-new.is-visible .contact-info-col .contact-email-new,
+.contact-section-new.is-visible .contact-info-col .contact-background-text {
+    /* On applique notre animation de base à tous les éléments */
+    animation: slideUpAndFadeIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* --- Définition des délais pour une apparition séquentielle et harmonieuse --- */
+
+/* Colonne de gauche (formulaire) */
+.contact-section-new.is-visible .contact-title-new { animation-delay: 0.1s; }
+.contact-section-new.is-visible .contact-intro-new { animation-delay: 0.2s; }
+.contact-section-new.is-visible .form-group-new:nth-of-type(1) { animation-delay: 0.3s; }
+.contact-section-new.is-visible .form-group-new:nth-of-type(2) { animation-delay: 0.4s; }
+.contact-section-new.is-visible .form-group-new:nth-of-type(3) { animation-delay: 0.5s; }
+.contact-section-new.is-visible .submit-btn-new { animation-delay: 0.6s; }
+
+/* Colonne de droite (infos) - animée en parallèle */
+.contact-section-new.is-visible .contact-symbol { animation-delay: 0.2s; }
+.contact-section-new.is-visible .contact-links-new a:nth-of-type(1) { animation-delay: 0.3s; }
+.contact-section-new.is-visible .contact-links-new a:nth-of-type(2) { animation-delay: 0.4s; }
+.contact-section-new.is-visible .contact-links-new a:nth-of-type(3) { animation-delay: 0.5s; }
+.contact-section-new.is-visible .contact-email-new { animation-delay: 0.6s; }
+.contact-section-new.is-visible .contact-background-text { animation-delay: 0.7s; }
 
 /* ======================================================== */
 /*             RESPONSIVE & MENU MOBILE                     */
@@ -1169,6 +1281,50 @@ body.dark-mode .image-wrapper:hover img {
 }
 
 /* ======================================================== */
+/*          ANIMATIONS POUR LA SECTION #ABOUT               */
+/* ======================================================== */
+
+/* On prépare les éléments à animer en les rendant invisibles par défaut */
+.about-image-wrapper,
+.about-intro > .about-name,
+.about-intro > .about-subtitle,
+.about-intro > .about-description,
+.about-detail-item,
+.about-projects-link {
+    opacity: 0;
+}
+
+/* --- Déclenchement des animations quand la section est visible --- */
+
+/* On anime chaque élément avec un délai différent pour un effet séquentiel */
+.about-section.is-visible .about-image-wrapper,
+.about-section.is-visible .about-intro > .about-name,
+.about-section.is-visible .about-intro > .about-subtitle,
+.about-section.is-visible .about-intro > .about-description,
+.about-section.is-visible .about-detail-item,
+.about-section.is-visible .about-projects-link {
+    animation: slideUpAndFadeIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* --- Définition des délais pour la séquence d'apparition --- */
+
+/* 1. L'image et le nom apparaissent en premier */
+.about-section.is-visible .about-image-wrapper { animation-delay: 0.1s; }
+.about-section.is-visible .about-name        { animation-delay: 0.2s; }
+
+/* 2. Puis le sous-titre et la description */
+.about-section.is-visible .about-subtitle    { animation-delay: 0.3s; }
+.about-section.is-visible .about-description { animation-delay: 0.4s; }
+
+/* 3. Ensuite, les détails apparaissent en cascade */
+.about-section.is-visible .about-detail-item:nth-of-type(1) { animation-delay: 0.5s; }
+.about-section.is-visible .about-detail-item:nth-of-type(2) { animation-delay: 0.6s; }
+.about-section.is-visible .about-detail-item:nth-of-type(3) { animation-delay: 0.7s; }
+
+/* 4. Et enfin, le lien vers les projets */
+.about-section.is-visible .about-projects-link { animation-delay: 0.8s; }
+
+/* ======================================================== */
 /*           SECTION MES PROJETS (VERSION FINALE)           */
 /* ======================================================== */
 .projects-section {
@@ -1308,23 +1464,78 @@ body.dark-mode .project-card:hover {
     .card-action { margin-left: 0; margin-top: 0.5rem; }
 }
 
+/* ======================================================== */
+/*          ANIMATIONS POUR LA SECTION #PROJETS             */
+/* ======================================================== */
+
+/* On prépare les éléments à animer en les mettant en état initial (invisible) */
+.projects-header .header-symbol,
+.projects-header .projects-title,
+.projects-header .header-text p,
+.project-card {
+    opacity: 0;
+}
+
+/* --- Déclenchement quand la section .projects-section devient visible --- */
+
+.projects-section.is-visible .projects-header .header-symbol,
+.projects-section.is-visible .projects-header .projects-title,
+.projects-section.is-visible .projects-header .header-text p,
+.projects-section.is-visible .project-card {
+    /* On applique notre animation de base à tous les éléments */
+    animation: slideUpAndFadeIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* --- Définition des délais pour créer une séquence --- */
+
+/* 1. L'en-tête de la section apparaît en premier */
+.projects-section.is-visible .projects-header .header-symbol { animation-delay: 0.1s; }
+.projects-section.is-visible .projects-header .projects-title { animation-delay: 0.2s; }
+.projects-section.is-visible .projects-header .header-text p  { animation-delay: 0.3s; }
+
+/* 2. Les cartes de projet apparaissent ensuite en cascade */
+/* Note : on utilise nth-of-type car les .project-card sont des <article> frères */
+.projects-section.is-visible .project-card:nth-of-type(1) { animation-delay: 0.4s; }
+.projects-section.is-visible .project-card:nth-of-type(2) { animation-delay: 0.5s; }
+.projects-section.is-visible .project-card:nth-of-type(3) { animation-delay: 0.6s; }
 
 /* ======================================================== */
-/*         BOÎTE DE DIALOGUE (VERSION FINALE CORRIGÉE)      */
+/*         BOÎTE DE DIALOGUE (NOUVELLE VERSION AMÉLIORÉE)   */
 /* ======================================================== */
+
+/* Le conteneur principal du dialogue (l'overlay) */
 .dialog {
     position: fixed;
-    inset: 0;
-    background-color: var(--bg-color);
+    inset: 0; /* Raccourci pour top: 0; right: 0; bottom: 0; left: 0; */
+    
+    /* MODIFICATION 1 : Le fond semi-transparent */
+    /* On utilise une couleur avec transparence pour voir l'arrière-plan. */
+    background-color: rgba(0, 0, 0, 0.3); /* Un fond sombre et transparent */
+
+    /* AJOUT 1 : L'effet de flou ! */
+    /* C'est la propriété clé pour flouter ce qui se trouve derrière. */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Pour la compatibilité avec Safari */
+
     display: flex;
+
+    /* MODIFICATION 2 : Centrage vertical et horizontal */
+    /* On centre le contenu (.dialog-content) au milieu de l'écran. */
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; 
+
+    /* On garde vos transitions et votre z-index */
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 1000;
-    overflow-y: auto;
-    padding: 3rem var(--site-margin);
+    overflow-y: auto; /* Permet de scroller si le dialogue est plus grand que l'écran */
+    padding: 2rem; /* Un peu de marge pour les petits écrans */
+}
+
+/* En mode sombre, on peut éclaircir un peu le fond pour un meilleur contraste */
+body.dark-mode .dialog {
+    background-color: rgba(30, 30, 30, 0.5); 
 }
 
 .dialog.is-open {
@@ -1332,13 +1543,30 @@ body.dark-mode .project-card:hover {
     opacity: 1;
 }
 
-/* SOLUTION : On retire display:flex du contenu pour éviter les bugs de calcul de hauteur. */
+/* Le contenu effectif de la boîte de dialogue */
 .dialog-content {
     width: 100%;
     max-width: 1200px;
-    border: 2px solid var(--border-color);
+
+    /* AJOUT 2 : Un fond solide pour la lisibilité */
+    /* Indispensable pour que le texte ne soit pas transparent lui aussi. */
+    background-color: var(--bg-color);
+    
+    border: 1px solid var(--border-color); /* Bordure un peu plus subtile */
+    
+    /* AJOUT 3 : Touches de design modernes */
+    border-radius: 12px; /* Des coins arrondis */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Une ombre portée pour donner de la profondeur */
+
     padding: 2.5rem;
+    
+    /* Permet au contenu de ne pas dépasser la hauteur de l'écran sur mobile */
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
 }
+
+/* Vos styles existants pour le header, body et close button sont bons. */
+/* On s'assure juste qu'ils fonctionnent avec la nouvelle structure. */
 
 .dialog-header {
     display: flex;
@@ -1357,6 +1585,7 @@ body.dark-mode .project-card:hover {
     height: auto;
     display: block;
     border: 2px solid var(--border-color);
+    border-radius: 8px; /* On arrondit aussi l'image */
 }
 
 .dialog-header-text {
@@ -1393,7 +1622,6 @@ body.dark-mode .project-card:hover {
     line-height: 1.8;
 }
 
-/* SOLUTION : On utilise float pour aligner le bouton sans perturber la hauteur du conteneur. */
 .dialog-close {
     font-family: var(--font-body);
     font-size: 1rem;
@@ -1406,9 +1634,16 @@ body.dark-mode .project-card:hover {
     clear: both;
 }
 
+/* Média queries pour la responsivité */
 @media (max-width: 768px) {
-    .dialog { padding: 1.5rem; }
-    .dialog-content { padding: 1.5rem; }
+    .dialog { 
+        padding: 1rem; /* Moins de padding sur mobile */
+        align-items: flex-start; /* On aligne en haut pour laisser plus de place */
+    }
+    .dialog-content { 
+        padding: 1.5rem; 
+        max-height: calc(100vh - 2rem);
+    }
     .dialog-header { flex-direction: column; }
     .dialog-header-visual { flex-basis: auto; width: 100%; max-width: 250px; }
     .dialog-title { font-size: 2.5rem; }

@@ -244,3 +244,158 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animateCursor();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const burgerMenu = document.getElementById('burger-menu');
+    const mainNav = document.getElementById('main-nav');
+    const breakpoint = 992; // Le point de rupture défini dans votre CSS
+
+    // Votre code existant pour le clic sur le burger
+    burgerMenu.addEventListener('click', () => {
+        burgerMenu.classList.toggle('toggle');
+        mainNav.classList.toggle('nav-active');
+    });
+
+    // --- LA CORRECTION EST ICI ---
+    // On ajoute une fonction pour gérer le redimensionnement de la fenêtre
+    function handleResize() {
+        // Si la largeur de la fenêtre est supérieure à notre point de rupture
+        if (window.innerWidth > breakpoint) {
+            // On s'assure que le menu mobile est bien fermé
+            // en retirant les classes qui le rendent actif.
+            burgerMenu.classList.remove('toggle');
+            mainNav.classList.remove('nav-active');
+        }
+    }
+
+    // On écoute l'événement 'resize' sur la fenêtre
+    window.addEventListener('resize', handleResize);
+
+    // On exécute la fonction une fois au chargement pour s'assurer
+    // que l'état initial est correct.
+    handleResize();
+
+    // ... (le reste de votre code JavaScript : gestion du thème, des boîtes de dialogue, etc.)
+
+});
+
+//animation section service
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const animatedSection = document.querySelector(".services-new");
+
+    if (!animatedSection) {
+        return; // Si la section n'existe pas, on arrête tout.
+    }
+
+    // L'Intersection Observer va nous dire quand la section est visible
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            // Si l'élément est dans le viewport (visible à l'écran)
+            if (entry.isIntersecting) {
+                // On ajoute la classe 'is-visible' pour déclencher les animations CSS
+                animatedSection.classList.add("is-visible");
+                // On peut arrêter d'observer une fois l'animation déclenchée
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        // L'animation se déclenchera quand 20% de la section sera visible
+        threshold: 0.2 
+    });
+
+    // On dit à l'observer de surveiller notre section
+    observer.observe(animatedSection);
+
+});
+
+//animation pour la section #about
+document.addEventListener("DOMContentLoaded", function() {
+
+    // On sélectionne TOUTES les sections qu'on veut animer
+    const animatedSections = document.querySelectorAll(".services-new, .about-section");
+
+    // Si aucune section à animer n'est trouvée, on s'arrête là.
+    if (animatedSections.length === 0) {
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            // Si la section est visible à l'écran
+            if (entry.isIntersecting) {
+                // On ajoute la classe .is-visible à la section concernée
+                entry.target.classList.add("is-visible");
+                // On arrête d'observer cette section pour que l'animation ne se répète pas
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        // L'animation se déclenchera quand 20% de la section sera visible
+        threshold: 0.2 
+    });
+
+    // On demande à l'observer de surveiller CHAQUE section que nous avons sélectionnée
+    animatedSections.forEach(section => {
+        observer.observe(section);
+    });
+
+});
+
+//fonction qui gère les animations de la section projet 
+document.addEventListener("DOMContentLoaded", function() {
+
+    // MISE À JOUR ICI : on ajoute .projects-section à la liste des sélecteurs
+    const animatedSections = document.querySelectorAll(".services-new, .about-section, .projects-section");
+
+    if (animatedSections.length === 0) {
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2 
+    });
+
+    animatedSections.forEach(section => {
+        observer.observe(section);
+    });
+
+});
+
+//animation s'apparition de la section contact
+document.addEventListener("DOMContentLoaded", function() {
+
+    // MISE À JOUR FINALE : on ajoute .contact-section-new à la liste
+    const animatedSections = document.querySelectorAll(".services-new, .about-section, .projects-section, .contact-section-new");
+
+    if (animatedSections.length === 0) {
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        // Se déclenche quand 20% de la section entre dans le viewport
+        threshold: 0.2 
+    });
+
+    // On observe chaque section de notre liste
+    animatedSections.forEach(section => {
+        observer.observe(section);
+    });
+
+});
