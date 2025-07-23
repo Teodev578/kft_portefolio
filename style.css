@@ -1568,12 +1568,16 @@ body.dark-mode .dialog {
 /* Vos styles existants pour le header, body et close button sont bons. */
 /* On s'assure juste qu'ils fonctionnent avec la nouvelle structure. */
 
+/*
+ * L'intérieur du dialogue
+*/
 .dialog-header {
+    position: static; /* <-- AJOUTEZ CETTE LIGNE ! */
     display: flex;
     gap: 2.5rem;
     border-bottom: 2px solid var(--border-color);
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+    padding: 2.5rem;
+    margin-bottom: 0; 
 }
 
 .dialog-header-visual {

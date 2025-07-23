@@ -269,45 +269,50 @@
 </section>
 
 <!-- ======================================================== -->
-<!--              BOÎTES DE DIALOGUE (MODALS)                 -->
-<!-- ======================================================== -->
-<!-- A placer juste avant la balise de fermeture </body> -->
-
-<!-- ======================================================== -->
-<!--     BOÎTES DE DIALOGUE (STRUCTURE MISE À JOUR)           -->
+<!--     DIALOGUE POUR PROJET PRO (STRUCTURE CORRIGÉE)        -->
 <!-- ======================================================== -->
 
-<!-- DIALOGUE POUR PROJET PROFESSIONNEL (NOUVELLE STRUCTURE) -->
 <div class="dialog" id="dialog-projet-pro">
     <div class="dialog-content">
-        <!-- Le header contient maintenant l'image et le texte -->
 
-        <!-- Votre header de dialogue, avec un h2 au lieu d'un h1 -->
-<header class="dialog-header">
-    <div class="dialog-header-visual">
-        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop" alt="Interface de l'application de gestion">
-    </div>
-    <div class="dialog-header-text">
-        <h2 class="dialog-title"><span>#1</span> Projet Professionnel</h2>
-        <p class="dialog-summary">
-            Développement d'une application de bureau et mobile complète pour la gestion des opérations d'une quincaillerie.
-        </p>
-        <div class="dialog-tags">
-            <span>Flutter</span>
-            <span>Firebase</span>
-            <span>Gestion de stock</span>
-            <span>Facturation</span>
-        </div>
-    </div>
-</header>
+        <!-- 
+            CORRECTION APPLIQUÉE ICI :
+            Le bouton de fermeture est maintenant le premier élément
+            à l'intérieur de "dialog-content".
+            
+            POURQUOI ? Cela permet au CSS de le positionner
+            correctement en haut à droite de la boîte de dialogue
+            sans interférer avec le reste du contenu.
+        -->
+        <button class="dialog-close" aria-label="Fermer la fenêtre">×</button>
+        
+        <!-- Le reste de votre structure est parfait et reste inchangé -->
+        
+        <header class="dialog-header">
+            <div class="dialog-header-visual">
+                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop" alt="Interface de l'application de gestion">
+            </div>
+            <div class="dialog-header-text">
+                <h2 class="dialog-title"><span>#1</span> Projet Professionnel</h2>
+                <p class="dialog-summary">
+                    Développement d'une application de bureau et mobile complète pour la gestion des opérations d'une quincaillerie.
+                </p>
+                <div class="dialog-tags">
+                    <span>Flutter</span>
+                    <span>Firebase</span>
+                    <span>Gestion de stock</span>
+                    <span>Facturation</span>
+                </div>
+            </div>
+        </header>
 
         <div class="dialog-body">
             <p>La quincaillerie faisait face à des pertes de temps considérables dues à une gestion manuelle des stocks et à un processus de facturation archaïque. L'objectif était de créer un outil centralisé, simple d'utilisation, pour automatiser ces tâches et fournir des statistiques de vente claires. J'ai conçu et développé une application multiplateforme (Windows & Android) avec Flutter. L'application permet de scanner des produits, générer des factures PDF, suivre l'état des stocks en temps réel et consulter un tableau de bord avec les chiffres de vente.</p>
             <p>L'utilisation de Firebase comme backend a permis une synchronisation instantanée des données entre les différents appareils, assurant une cohérence parfaite de l'information. Ce projet a été une excellente opportunité de mettre en pratique des compétences en développement d'applications complètes, de la conception de l'interface utilisateur à la gestion de la base de données en temps réel.</p>
         </div>
         
-        <!-- Le bouton de fermeture est maintenant à la fin -->
-        <button class="dialog-close">X Fermer</button>
+        <!-- Le bouton de fermeture a été déplacé vers le haut -->
+
     </div>
 </div>
 
