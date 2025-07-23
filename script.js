@@ -148,6 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
+/* ======================================================== */
+/*             GESTION DES DIALOGUES (MODALS)               */
+/* ======================================================== */
 /* ======================================================== */
 /*             GESTION DES DIALOGUES (MODALS)               */
 /* ======================================================== */
@@ -157,19 +161,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButtons = document.querySelectorAll('.dialog-close');
     const dialogs = document.querySelectorAll('.dialog');
 
+    // --- CORRECTION APPLIQUÉE ICI ---
     // Fonction pour ouvrir un dialogue
     const openDialog = (dialog) => {
         if (dialog) {
             dialog.classList.add('is-open');
-            document.body.style.overflow = 'hidden'; // Empêche le scroll en arrière-plan
+            // On utilise la classe CSS pour bloquer le scroll
+            document.body.classList.add('dialog-open'); 
         }
     };
 
+    // --- CORRECTION APPLIQUÉE ICI ---
     // Fonction pour fermer un dialogue
     const closeDialog = (dialog) => {
         if (dialog) {
             dialog.classList.remove('is-open');
-            document.body.style.overflow = ''; // Rétablit le scroll
+            // On retire la classe pour rétablir le scroll
+            document.body.classList.remove('dialog-open'); 
         }
     };
 
