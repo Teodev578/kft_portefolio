@@ -235,20 +235,25 @@
             </div>
         </article>
 
-        <article class="project-card" data-dialog-target="#dialog-projet-perso">
+        <article class="project-card" data-dialog-target="#dialog-projet-gmailsorter">
             <div class="project-card-inner-container">
                 <div class="card-number">#2</div>
                 <div class="card-content">
                     <div class="card-info">
-                        <h3 class="card-title">SITE PORTFOLIO</h3>
+                        <h3 class="card-title">GmailSorter — IA de tri automatique d’e-mails</h3>
                         <div class="card-tags">
-                            <span>HTML5</span> | <span>CSS3</span> | <span>JavaScript</span> | <span>Responsive Design</span>
+                            <span>Python</span> | 
+                            <span>Gemini 1.5</span> | 
+                            <span>Gmail API</span> | 
+                            <span>OAuth2</span> | 
+                            <span>Batching</span>
                         </div>
                     </div>
-                    <div class="card-action">en savoir plus -></div>
+                    <div class="card-action">en savoir plus →</div>
                 </div>
             </div>
         </article>
+
 
         <article class="project-card" data-dialog-target="#dialog-projet-scolaire">
             <div class="project-card-inner-container">
@@ -312,35 +317,49 @@
     </div>
 </div>
 
-<!-- Mettez à jour les autres dialogues avec la même structure si nécessaire -->
-
-<!-- DIALOGUE POUR PROJET PORTFOLIO -->
-<div class="dialog" id="dialog-projet-perso">
+<!-- ======================================================== -->
+<!--     DIALOGUE POUR PROJET PRO : GmailSorter IA Email     -->
+<!-- ======================================================== -->
+<div class="dialog" id="dialog-projet-gmailsorter">
     <div class="dialog-content">
-        <button class="dialog-close" aria-label="Fermer la fenêtre">×</button>
-        <header class="dialog-header">
-            <h1 class="dialog-title"><span>#2</span> Projet Personnel : Site Portfolio</h1>
-            <p class="dialog-summary">
-                Création de ce site portfolio pour présenter mes compétences et projets. L'accent a été mis sur un design moderne, une expérience utilisateur fluide et une parfaite responsivité.
-            </p>
-            <div class="dialog-tags">
-                <span>HTML5</span> | <span>CSS3</span> | <span>JavaScript</span> | <span>Responsive Design</span>
+        <!-- Layout principal pour le contenu (tout sauf le bouton fermer) -->
+        <div class="dialog-main-layout">
+
+            <!-- Colonne de gauche : Image -->
+            <div class="dialog-visual">
+                <img src="https://images.unsplash.com/photo-1585079551902-845ccf1b31b1?q=80&w=2070&auto=format&fit=crop" alt="Gmail tri automatique IA">
             </div>
-        </header>
-        <div class="dialog-body">
-            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop" alt="Code source du site portfolio">
-            <h4>Objectifs</h4>
-            <p>Le but était de construire un site vitrine de A à Z, en utilisant des technologies web fondamentales et en appliquant les meilleures pratiques de développement : code sémantique, CSS modulaire avec des variables, et JavaScript non-obstrusif pour les interactions.</p>
-            <h4>Caractéristiques Notables</h4>
-            <ul>
-                <li><strong>Thème Clair/Sombre :</strong> Une bascule de thème persistante pour le confort visuel de l'utilisateur.</li>
-                <li><strong>Design Responsive :</strong> Le site s'adapte élégamment à toutes les tailles d'écrans, du mobile au grand écran de bureau.</li>
-                <li><strong>Animations subtiles :</strong> Des transitions et animations légères pour dynamiser la navigation sans nuire à la performance.</li>
-                <li><strong>Formulaire de contact fonctionnel :</strong> Intégration d'un service tiers (Web3Forms) pour une gestion simple et efficace des messages.</li>
-            </ul>
+
+            <!-- Colonne de droite : Titre et métadonnées -->
+            <div class="dialog-header-content">
+                <h2 class="dialog-title">
+                    <span class="dialog-title-symbol">*</span>GmailSorter — IA de tri automatique des e-mails
+                </h2>
+                <p class="dialog-short-description">
+                    Script Python intelligent qui analyse et trie automatiquement les e-mails Gmail à l’aide de l’IA Gemini et de l’API Gmail, en appliquant des libellés personnalisés.
+                </p>
+                <div class="dialog-meta">
+                    <span>Python</span>
+                    <span>Gmail API</span>
+                    <span>Gemini</span>
+                    <span>OAuth2</span>
+                </div>
+            </div>
+
+            <!-- Corps du texte (s'étend sur toute la largeur sous la grille) -->
+            <div class="dialog-body">
+                <p>Le projet GmailSorter répond à un besoin clair : automatiser le tri des e-mails pour gagner du temps et rester organisé. En combinant les capacités de l'IA générative Gemini avec les APIs Gmail, le script lit chaque e-mail, en extrait les métadonnées clés (expéditeur, sujet, extrait), et le classe intelligemment dans une catégorie définie (Professionnel, Factures, Publicité, etc.).</p>
+                <p>Le script fonctionne par lots, applique les libellés automatiquement, et peut archiver les mails traités. Il inclut une gestion robuste des erreurs via retries exponentiels, un mode “Dry Run” pour les tests, et un résumé statistique à chaque exécution.</p>
+                <p>J'ai développé ce projet pour explorer l'intégration d'une IA générative dans un usage concret, tout en respectant les bonnes pratiques de modularité, sécurité (OAuth2, clés API dans .env), et clarté du code. Ce fut une excellente opportunité pour solidifier mes compétences en automatisation, en APIs Google, et en design d’outils pratiques.</p>
+            </div>
+
         </div>
+
+        <!-- Bouton de fermeture, maintenant positionné en bas à droite -->
+        <button class="dialog-close">X Fermer</button>
     </div>
 </div>
+
 
 <!-- DIALOGUE POUR PROJET SCOLAIRE -->
 <div class="dialog" id="dialog-projet-scolaire">
@@ -350,72 +369,79 @@
     </div>
 </div>
 
-        <!-- ======================================================== -->
-        <!--                SECTION CONTACT (NOUVELLE VERSION)        -->
-        <!-- ======================================================== -->
-        <section id="contact" class="contact-section-new">
-            <div class="contact-container-new">
-        
-                <!-- Colonne de gauche : Formulaire -->
-                <div class="contact-form-col">
-                    <h2 class="contact-title-new">Donnons vie à votre projet :</h2>
-                    <p class="contact-intro-new">
-                        Mon objectif : vous simplifier la vie en transformant vos défis quotidiens en applications intuitives et performantes. Les tâches complexes, répétitives ou fastidieuses ? C'est mon terrain de jeu. Racontez-moi votre idée, et construisons ensemble la solution qui vous fera gagner du temps et de la sérénité et de l'argent.
-                    </p>
-        
-                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                        <!-- Votre clé d'accès Web3Forms -->
-                        <input type="hidden" name="access_key" value="8efd2e12-79ac-4611-989d-e4c448541f75">
-        
-                        <!-- Champs du formulaire -->
-                        <div class="form-group-new">
-                            <input type="text" id="name" name="name" placeholder="Votre nom :" required>
-                        </div>
-                        <div class="form-group-new">
-                            <input type="email" id="email" name="email" placeholder="Votre email :" required>
-                        </div>
-                        <div class="form-group-new">
-                            <textarea id="message" name="message" placeholder="Votre message :" rows="5" required></textarea>
-                        </div>
-        
-                        <!-- Bouton d'envoi -->
-                        <button type="submit" class="submit-btn-new">
-                            <span>Envoyer</span>
-                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>                        
-                        </button>
-                         <!-- Pour afficher les messages de statut (succès/erreur) -->
-                        <div id="form-status" class="form-status-new"></div>
-                    </form>
+<!-- ======================================================== -->
+<!--                SECTION CONTACT (NOUVELLE VERSION)        -->
+<!-- ======================================================== -->
+<section id="contact" class="contact-section-new">
+    <div class="contact-container-new">
+
+        <!-- Colonne de gauche : Formulaire (INCHANGÉ) -->
+        <div class="contact-form-col">
+            <h2 class="contact-title-new">Donnons vie à votre projet :</h2>
+            <p class="contact-intro-new">
+                Mon objectif : vous simplifier la vie en transformant vos défis quotidiens en applications intuitives et performantes. Les tâches complexes, répétitives ou fastidieuses ? C'est mon terrain de jeu. Racontez-moi votre idée, et construisons ensemble la solution qui vous fera gagner du temps et de la sérénité et de l'argent.
+            </p>
+
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Votre clé d'accès Web3Forms -->
+                <input type="hidden" name="access_key" value="8efd2e12-79ac-4611-989d-e4c448541f75">
+
+                <!-- Champs du formulaire -->
+                <div class="form-group-new">
+                    <input type="text" id="name" name="name" placeholder="Votre nom :" required>
                 </div>
-        
-                <!-- Colonne de droite : Infos & Liens -->
-                <div class="contact-info-col">
-                    <div class="contact-symbol">*</div>
-                    
-                    <div class="contact-links-new">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                            <span>Facebook</span>
-                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                            <span>Instagram</span>
-                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                            <span>Linkedin</span>
-                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-        
-                    <a href="mailto:teokpekpassi@gmail.com" class="contact-email-new">teokpekpassi@gmail.com</a>
-        
-                    <div class="contact-background-text">CONTACT</div>
+                <div class="form-group-new">
+                    <input type="email" id="email" name="email" placeholder="Votre email :" required>
                 </div>
-        
+                <div class="form-group-new">
+                    <textarea id="message" name="message" placeholder="Votre message :" rows="5" required></textarea>
+                </div>
+
+                <!-- Bouton d'envoi -->
+                <button type="submit" class="submit-btn-new">
+                    <span>Envoyer</span>
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                </button>
+                 <!-- Pour afficher les messages de statut (succès/erreur) -->
+                <div id="form-status" class="form-status-new"></div>
+            </form>
+        </div>
+
+        <!-- Colonne de droite : Infos & Liens (VERSION CORRIGÉE) -->
+        <div class="contact-info-col">
+            
+            <!-- NOUVEL ÉLÉMENT AJOUTÉ ICI -->
+            <div class="contact-cta-new">
+                <span>↓ CONTACTEZ-MOI</span>
             </div>
-        </section>
+            
+            <!-- Les liens vers les réseaux sociaux -->
+            <div class="contact-links-new">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                    <span>Facebook</span>
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                    <span>Instagram</span>
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <span>Linkedin</span>
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+
+            <!-- L'adresse email avec la bordure rouge -->
+            <a href="mailto:teokpekpassi@gmail.com" class="contact-email-new">teokpekpassi@gmail.com</a>
+
+            <!-- Le grand texte "CONTACT" en arrière-plan -->
+            <div class="contact-background-text">CONTACT</div>
+        </div>
+
+    </div>
+</section>
     </main>
 
     <script src="script.js"></script>
