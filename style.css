@@ -713,10 +713,11 @@ body.dark-mode .image-wrapper:hover img {
 
 /* --- Colonne de droite (Infos & Liens) --- */
 .contact-info-col {
+    position: relative; /* <--- AJOUTEZ CETTE LIGNE */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: 100%; /* S'assure que la colonne prend toute la hauteur disponible */
+    height: 100%; 
 }
 
 .contact-cta-new {
@@ -769,12 +770,31 @@ body.dark-mode .image-wrapper:hover img {
     color: var(--text-color);
     user-select: none;
     
-    /* LA MAGIE EST ICI : 
-       Cette ligne pousse cet élément tout en bas de son conteneur flex. */
-    margin-top: auto; 
-    
-    position: relative;
+    /* On le positionne en absolu par rapport à la colonne */
+    position: absolute;
+    bottom: -2rem; /* Ajustez pour un positionnement vertical parfait */
     left: -10px; /* Le petit décalage de la maquette */
+    z-index: 0; /* Reste en arrière-plan */
+}
+
+/*
+  Ce nouveau style pousse le groupe (liens + email) vers le bas 
+  de la colonne d'informations.
+*/
+.contact-details-group {
+    margin-top: auto; /* C'EST LA PROPRIÉTÉ MAGIQUE ! */
+    margin-bottom: 8rem; /* Crée de l'espace EN DESSOUS pour le grand titre "CONTACT" */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem; /* Espace entre les liens sociaux et l'email */
+    position: relative; /* Assure que ce groupe est au-dessus du texte de fond */
+    z-index: 1;
+}
+
+/* On s'assure que l'email n'a plus de marge superflue */
+.contact-email-new {
+    margin-top: 0;
 }
 
 /* ======================================================== */
