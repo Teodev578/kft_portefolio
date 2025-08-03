@@ -770,11 +770,21 @@ body.dark-mode .image-wrapper:hover img {
     color: var(--text-color);
     user-select: none;
     
-    /* On le positionne en absolu par rapport à la colonne */
+    /* Positionnement absolu par rapport à la colonne parente */
     position: absolute;
-    bottom: -2rem; /* Ajustez pour un positionnement vertical parfait */
-    left: -10px; /* Le petit décalage de la maquette */
-    z-index: 0; /* Reste en arrière-plan */
+    bottom: -2rem;
+    left: 0; /* Aligne la boîte à gauche de la colonne */
+    width: 100%; /* Fait en sorte que la boîte prenne toute la largeur */
+    
+    /* --- MODIFICATIONS CI-DESSOUS --- */
+    
+    /* 1. Ajout de la ligne rouge au-dessus */
+    border-top: 3px solid var(--accent-color);
+    
+    /* 2. Ajout d'un espace entre la ligne et le texte "CONTACT" */
+    padding-top: 1.5rem; 
+
+    z-index: 0;
 }
 
 /*
