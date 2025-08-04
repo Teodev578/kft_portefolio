@@ -611,6 +611,7 @@ body.dark-mode .image-wrapper:hover img {
     animation: slideUpAndFadeIn 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     animation-delay: 0.7s; /* Apparaît en dernier */
 }
+
 /* ======================================================== */
 /*           SECTION CONTACT (VERSION FINALE ET ALIGNÉE)    */
 /* ======================================================== */
@@ -634,17 +635,15 @@ body.dark-mode .image-wrapper:hover img {
     gap: 5rem;
     height: 100%; /* S'assure que le conteneur grid prend toute la hauteur disponible */
     
-    /* LA CORRECTION EST ICI : 
-       On supprime 'align-items: center'. La valeur par défaut 'stretch' 
-       va maintenant forcer les deux colonnes à avoir la même hauteur. */
+    /* CORRECTION 1 : On force l'alignement des colonnes par le haut */
+    align-items: start;
 }
 
 /* --- Colonne de gauche (Formulaire) --- */
 .contact-form-col {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100%; /* S'assure que la colonne prend toute la hauteur disponible */
+    height: 100%; 
 }
 
 .contact-title-new {
@@ -678,7 +677,9 @@ body.dark-mode .image-wrapper:hover img {
 
 .form-group-new textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 40px; /* Augmente la hauteur minimale */
+    height: 100px; /* Hauteur par défaut */
+    overflow: auto; /* Ajoute une barre de défilement si le contenu dépasse */
 }
 
 .form-group-new input::placeholder,
@@ -713,21 +714,32 @@ body.dark-mode .image-wrapper:hover img {
 
 /* --- Colonne de droite (Infos & Liens) --- */
 .contact-info-col {
-    position: relative; /* <--- AJOUTEZ CETTE LIGNE */
+    position: relative; 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     height: 100%; 
+    
+    /* CORRECTION 2 : On force le contenu à ne jamais déborder.
+       Cela va "couper" tout ce qui dépasse, vous montrant que c'est bien contenu. */
+    overflow: hidden;
+
+    /* AJOUTEZ CES DEUX LIGNES CI-DESSOUS */
+    container-type: inline-size;
+    container-name: contact-column;
 }
 
 .contact-cta-new {
+    /* ON SUPPRIME LA POSITION ABSOLUE pour qu'il reste dans le flux normal */
     font-family: var(--font-headline);
     font-weight: 400;
-    font-size: clamp(2rem, 3vw, 2.5rem);
+    /* On utilise la même taille que le titre de gauche pour un alignement parfait */
+    font-size: 1.75rem; 
     color: var(--accent-color);
     text-transform: uppercase;
+    /* On utilise la même marge pour un espacement identique */
     margin-bottom: 4rem; 
 }
+
 
 /* On groupe les liens et l'email pour une meilleure gestion */
 .contact-links-group {
@@ -759,7 +771,6 @@ body.dark-mode .image-wrapper:hover img {
     font-family: var(--font-body);
     font-size: 1.25rem;
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid var(--accent-color);
 }
 
 .contact-background-text {
@@ -769,21 +780,16 @@ body.dark-mode .image-wrapper:hover img {
     line-height: 1;
     color: var(--text-color);
     user-select: none;
-    
-    /* Positionnement absolu par rapport à la colonne parente */
     position: absolute;
-    bottom: -2rem;
-    left: 0; /* Aligne la boîte à gauche de la colonne */
-    width: 100%; /* Fait en sorte que la boîte prenne toute la largeur */
     
-    /* --- MODIFICATIONS CI-DESSOUS --- */
-    
-    /* 1. Ajout de la ligne rouge au-dessus */
-    border-top: 3px solid var(--accent-color);
-    
-    /* 2. Ajout d'un espace entre la ligne et le texte "CONTACT" */
-    padding-top: 1.5rem; 
+    /* CORRECTION ICI :
+       'bottom: 0' le colle en bas de la colonne, sans dépasser. */
+    bottom: 0;
 
+    left: 0;
+    width: 100%;
+    border-top: 3px solid var(--accent-color);
+    padding-top: 1.5rem; 
     z-index: 0;
 }
 
@@ -791,14 +797,24 @@ body.dark-mode .image-wrapper:hover img {
   Ce nouveau style pousse le groupe (liens + email) vers le bas 
   de la colonne d'informations.
 */
+/*
+  Ce nouveau style pousse le groupe (liens + email) vers le bas 
+  de la colonne d'informations.
+*/
 .contact-details-group {
-    margin-top: auto; /* C'EST LA PROPRIÉTÉ MAGIQUE ! */
-    margin-bottom: 8rem; /* Crée de l'espace EN DESSOUS pour le grand titre "CONTACT" */
+    margin-top: auto; /* Pousse le groupe vers le bas */
+    
+    /* 
+      C'EST ICI QUE VOUS GÉREZ L'ESPACE ! 
+      Changez cette valeur pour ajuster la distance avec le texte "CONTACT".
+    */
+    margin-bottom: 9rem; /* Par exemple, mettez 5rem pour moins d'espace, ou 10rem pour plus. */
+    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem; /* Espace entre les liens sociaux et l'email */
-    position: relative; /* Assure que ce groupe est au-dessus du texte de fond */
+    gap: 2rem;
+    position: relative;
     z-index: 1;
 }
 
