@@ -28,6 +28,12 @@
     --input-border: #d1d5db;
 }
 
+html {
+    overflow-y: scroll;
+    cursor: none;
+    scroll-behavior: smooth; 
+}
+
 /* --- Thème Sombre --- */
 body.dark-mode {
     --bg-color: #201D1D;
@@ -49,11 +55,6 @@ body.dark-mode {
     box-sizing: border-box; 
     /* CORRECTION 2 : On applique le curseur personnalisé à tout par défaut */
     cursor: none;
-}
-
-html { 
-    cursor: none;
-    scroll-behavior: smooth; 
 }
 
 body {
@@ -616,14 +617,24 @@ body.dark-mode .image-wrapper:hover img {
 /*           SECTION CONTACT (VERSION FINALE ET ALIGNÉE)    */
 /* ======================================================== */
 
+/*
+ * Dans votre fichier style.css, trouvez la règle pour .contact-section-new
+ * et remplacez-la par celle-ci pour corriger le bug.
+*/
 .contact-section-new {
     background-color: var(--bg-color);
     color: var(--text-color);
     padding: 0 var(--site-margin);
-    height: calc(100vh - var(--header-height));
-    margin-top: var(--header-height);
+    
+    /* On utilise min-height, comme pour les autres sections */
+    min-height: 100vh;
+    
+    /* On utilise un padding-top pour s'assurer que le contenu ne passe pas sous le header. */
+    padding-top: var(--header-height);
+    margin-top: 0;
+
     display: flex;
-    align-items: center;
+    align-items: start;
 }
 
 .contact-container-new {
@@ -1602,6 +1613,17 @@ body.dark-mode .dialog {
 */
 body.dialog-open {
     overflow: hidden;
+    /* On ajoute un padding à droite égal à la largeur de la scrollbar */
+    padding-right: var(--scrollbar-width);
+}
+
+/* AJOUTEZ CETTE NOUVELLE RÈGLE DANS STYLE.CSS */
+/*
+ * On compense également le décalage pour le header qui est en position fixe
+ * pour qu'il ne se décale pas lorsque le padding est ajouté au body.
+*/
+body.dialog-open header {
+    padding-right: var(--scrollbar-width);
 }
 
 /* 

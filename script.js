@@ -407,3 +407,40 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+
+// AJOUTEZ CE BLOC AU DÉBUT DE VOTRE FICHIER SCRIPT.JS
+
+// Fonction pour calculer la largeur de la barre de défilement et la stocker dans une variable CSS
+function updateScrollbarWidth() {
+    // On crée une div invisible
+    const outer = document.createElement('div');
+    outer.style.visibility = 'hidden';
+    outer.style.width = '100px';
+    outer.style.msOverflowStyle = 'scrollbar'; // Nécessaire pour IE et Edge
+
+    document.body.appendChild(outer);
+
+    const widthNoScroll = outer.offsetWidth;
+    // On force l'affichage de la scrollbar
+    outer.style.overflow = 'scroll';
+
+    // On crée une div intérieure
+    const inner = document.createElement('div');
+    inner.style.width = '100%';
+    outer.appendChild(inner);
+
+    const widthWithScroll = inner.offsetWidth;
+
+    // On retire la div de test du DOM
+    outer.parentNode.removeChild(outer);
+
+    // On calcule la largeur de la scrollbar et on la stocke dans une variable CSS
+    const scrollbarWidth = widthNoScroll - widthWithScroll;
+    document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
+}
+
+// Appeler la fonction au chargement et lors du redimensionnement de la fenêtre
+document.addEventListener('DOMContentLoaded', updateScrollbarWidth);
+window.addEventListener('resize', updateScrollbarWidth);
+
+// ... (le reste de votre code JS existant)
