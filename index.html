@@ -276,46 +276,83 @@
 <!-- ======================================================== -->
 <!--     DIALOGUE POUR PROJET PRO (STRUCTURE MAQUETTE)      -->
 <!-- ======================================================== -->
+ <!-- <div class="dialog" id="dialog-projet-pro"> -->
+
+<!-- ======================================================== -->
+<!--     DIALOGUE POUR PROJET PRO (STRUCTURE MAQUETTE)      -->
+<!-- ======================================================== -->
 <div class="dialog" id="dialog-projet-pro">
-    <div class="dialog-content">
-        <!-- Layout principal pour le contenu (tout sauf le bouton fermer) -->
-        <div class="dialog-main-layout">
+  <div class="dialog-content">
 
-            <!-- Colonne de gauche : Image -->
-            <div class="dialog-visual">
-                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop" alt="Interface de l'application de gestion">
-            </div>
+    <!-- Layout principal : 2 colonnes + description -->
+    <div class="dialog-main-layout">
 
-            <!-- Colonne de droite : Titre et métadonnées -->
-            <div class="dialog-header-content">
-                <h2 class="dialog-title">
-                    <span class="dialog-title-symbol">*</span>1 TITRE PROJET 1 :
-                </h2>
-                <p class="dialog-short-description">
-                    Pour répondre à une problématique de gestion manuelle et de facturation obsolète, ce projet a donné naissance à une application centralisée qui simplifie les opérations quotidiennes de la quincaillerie.
-                </p>
-                <div class="dialog-meta">
-                    <!-- Ces textes sont maintenant stylisés comme dans la maquette -->
-                    <span>Flutter</span>
-                    <span>Firebase</span>
-                    <span>Gestion</span>
-                    <span>Facturation</span>
-                </div>
-            </div>
+      <!-- Colonne gauche : Aperçu visuel / Screenshot -->
+      <div class="dialog-visual">
+        <!-- 🔁 Remplace l'image ci-dessous par ta capture -->
+        <img 
+          src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop" 
+          alt="Capture de l'application de gestion BMS sur Windows" 
+        />
+      </div>
 
-            <!-- Corps du texte (s'étend sur toute la largeur sous la grille) -->
-            <div class="dialog-body">
-                <p>La quincaillerie faisait face à des pertes de temps considérables dues à une gestion manuelle des stocks et à un processus de facturation archaïque. L'objectif était de créer un outil centralisé, simple d'utilisation, pour automatiser ces tâches et fournir des statistiques de vente claires.</p>
-                <p>J'ai conçu et développé une application multiplateforme (Windows & Android) avec Flutter. L'application permet de scanner des produits, générer des factures PDF, suivre l'état des stocks en temps réel et consulter un tableau de bord avec les chiffres de vente. L'utilisation de Firebase comme backend a permis une synchronisation instantanée des données entre les différents appareils, assurant une cohérence parfaite de l'information.</p>
-                <p>Ce projet a été une excellente opportunité de mettre en pratique des compétences en développement d'applications complètes, de la conception de l'interface utilisateur à la gestion de la base de données en temps réel.</p>
-            </div>
+      <!-- Colonne droite : Titre, pitch, tags -->
+      <div class="dialog-header-content">
+        <h2 class="dialog-title">
+          <span class="dialog-title-symbol">*</span>Bright Morning Star (BMS)
+        </h2>
+        <p class="dialog-short-description">
+          Application de gestion de quincaillerie développée avec Flutter et optimisée pour Windows, conçue pour automatiser la gestion des ventes, des stocks et des clients.
+        </p>
 
+        <div class="dialog-meta">
+          <span>Flutter</span>
+          <span>Firebase</span>
+          <span>Windows</span>
+          <span>Facturation</span>
+          <span>PDF/Excel</span>
         </div>
+      </div>
 
-        <!-- Bouton de fermeture, maintenant positionné en bas à droite -->
-        <button class="dialog-close">X Fermer</button>
-    </div>
+      <!-- Corps de texte : description détaillée du projet -->
+<div class="dialog-body">
+  <p>
+    Avant ce projet, la gestion de la quincaillerie reposait sur des méthodes manuelles lentes et sources d’erreurs. J’ai conçu une solution sur-mesure pour améliorer la productivité, suivre les ventes en temps réel et fiabiliser la facturation.
+  </p>
+
+  <p>
+    L’application, développée avec Flutter, fonctionne actuellement sur Windows. Elle permet d’enregistrer les ventes, gérer les produits et les fournisseurs, suivre les dettes clients, et générer automatiquement des rapports PDF ou Excel.
+  </p>
+
+  <!-- ✅ INSERTION D'UNE IMAGE ENTRE DEUX BLOCS -->
+  <div class="dialog-screenshot">
+    <img src="chemin/vers/ton-screenshot1.png" alt="Capture du module de ventes">
+    <p class="caption">Exemple : Interface d'enregistrement d'une vente</p>
+  </div>
+
+  <p>
+    J’ai utilisé Firebase comme backend sécurisé (Authentication, Firestore, Realtime Database), assurant une synchronisation fluide des données, même en cas de coupure réseau temporaire. Une attention particulière a été portée à l’expérience utilisateur, avec une interface intuitive et un tableau de bord visuel.
+  </p>
+
+  <!-- ✅ POSSIBILITÉ D'EN RAJOUTER ENCORE -->
+  <div class="dialog-screenshot">
+    <img src="chemin/vers/ton-screenshot2.png" alt="Capture du tableau de bord des ventes">
+    <p class="caption">Vue du tableau de bord : Statistiques de ventes</p>
+  </div>
+
+  <p>
+    Ce projet démontre ma capacité à concevoir une application métier complète : architecture, UI/UX, gestion des données et déploiement via MSIX.
+  </p>
 </div>
+
+
+    </div>
+
+    <!-- Bouton de fermeture -->
+    <button class="dialog-close" aria-label="Fermer la fenêtre">X Fermer</button>
+  </div>
+</div>
+
 
 <!-- ======================================================== -->
 <!--     DIALOGUE POUR PROJET PRO : GmailSorter IA Email     -->
