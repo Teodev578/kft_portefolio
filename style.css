@@ -36,7 +36,7 @@ html {
 
 /* --- Thème Sombre --- */
 body.dark-mode {
-    --bg-color: #201D1D;
+    --bg-color: #2A282A;
     --text-color: #F5F0E8;
     --border-color: #F5F0E8;
     --shadow-color: rgba(255, 255, 255, 0.05);
@@ -138,7 +138,7 @@ header.scrolled {
 }
 
 body.dark-mode header.scrolled {
-    background-color: rgba(31, 31, 31, 0.8); /* Fond sombre avec transparence */
+    background-color: rgba(44, 42, 44, 0.8); /* Fond sombre avec transparence, ajusté pour mieux se fondre avec le thème */
 }
 
 .header-container {
