@@ -30,7 +30,6 @@
 
 html {
     overflow-y: scroll;
-    cursor: none;
     scroll-behavior: smooth; 
 }
 
@@ -53,12 +52,9 @@ body.dark-mode {
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
-    /* CORRECTION 2 : On applique le curseur personnalisé à tout par défaut */
-    cursor: none;
 }
 
 body {
-    cursor: none;
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-body);
@@ -76,45 +72,14 @@ body {
 
 h1, h2, h3, h4 { 
     font-weight: 700; 
-    cursor: none;
 }
 
 a { 
     color: inherit; 
     text-decoration: none; 
     transition: color 0.3s ease; 
-    cursor: none;
 }
 
-/* Le point central - notre curseur principal */
-.cursor-dot {
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    background-color: var(--text-color);
-    border-radius: 50%; /* Pour un cercle, retirez pour un carré brutaliste */
-    pointer-events: none; /* TRÈS IMPORTANT: pour que l'on puisse cliquer à travers */
-    transform: translate(-50%, -50%); /* Pour centrer le point sur le curseur */
-    transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out; /* Pour les animations de survol */
-}
-
-/* La bulle qui suit - notre effet de traînée */
-.cursor-bubble {
-    position: fixed;
-    z-index: 9998;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--text-color); /* Un contour, pas un fond */
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.15s ease-out, width 0.3s ease-out, height 0.3s ease-out, border-radius 0.3s ease-out; /* Vitesse de suivi de la bulle */
-}
 
 /* ======================================================== */
 /*                   HEADER & NAVIGATION                    */
@@ -463,90 +428,136 @@ body.dark-mode .image-wrapper:hover img {
 
 
 /* ======================================================== */
-/*                NOUVEAUX STYLES POUR #SERVICES            */
+/*          NOUVELLE SECTION SERVICES (FINALE)              */
 /* ======================================================== */
 
-/* Le conteneur principal de la section */
 .services-new {
-    padding: 8rem var(--site-margin);
-    background-color: var(--section-alt-bg); /* Utilisons le fond alternatif pour contraster */
-    overflow: hidden; /* Empêche les débordements d'animations */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: var(--header-height) var(--site-margin) 4rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
-/* Le conteneur grid */
+/*
+ *  CORRECTION PRINCIPALE : MOBILE & TABLETTE (PAR DÉFAUT)
+ *  On définit une grille simple à une seule colonne. Les éléments (titre, image, liste)
+ *  vont s'empiler verticalement dans l'ordre où ils apparaissent dans le HTML.
+*/
 .services-container-new {
+    width: 100%;
+    max-width: var(--site-max-width);
+    margin: 0 auto;
     display: grid;
-    /* On définit 2 colonnes de tailles inégales */
-    grid-template-columns: 1fr 1.2fr; 
-    gap: 2rem 4rem; /* 2rem de gap vertical, 4rem horizontal */
-    
-    /* C'est ici que la magie opère : on définit les zones */
-    grid-template-areas:
-        "title title"
-        "image list"
-        "image list";
+    grid-template-columns: 1fr; /* Force une seule colonne */
+    gap: 3rem; /* Espace entre le titre, l'image et la liste */
 }
 
-/* --- Placement des éléments dans la grille --- */
+/* --- Éléments de la section (styles inchangés) --- */
 
 .services-main-title {
-    grid-area: title; /* Le titre prend toute la zone "title" */
     font-family: var(--font-headline);
-    font-size: clamp(4rem, 12vw, 10rem);
-    color: var(--accent-color);
+    font-weight: 400;
+    font-size: clamp(4.5rem, 15vw, 7rem);
     line-height: 0.9;
-    margin-bottom: 3rem;
-    /* Optionnel : ajoutez l'effet glitch au scroll (nécessite JS) */
-    /* text-shadow: -2px 0 #49a5da, 2px 2px var(--text-color); */
+    color: var(--accent-color);
+    text-transform: uppercase;
 }
 
-.services-image-wrapper {
-    grid-area: image; /* L'image prend la zone "image" */
+.services-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .services-list {
-    grid-area: list; /* La liste prend la zone "list" */
     display: flex;
     flex-direction: column;
 }
 
-/* Amélioration de la liste des services */
+/* --- Styles pour un service individuel (styles inchangés) --- */
+
 .service-item {
-    /* On remplace les <hr> par des bordures, plus contrôlables */
     border-bottom: 1px solid var(--border-color);
-    padding: 2rem 0;
-    transition: background-color 0.2s ease;
+    padding-bottom: 2.5rem;
 }
 
 .service-item:first-child {
     border-top: 1px solid var(--border-color);
+    padding-top: 2.5rem;
+}
+
+.service-item + .service-item {
+    padding-top: 2.5rem;
 }
 
 .service-item h3 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .service-item p {
-    max-width: 60ch;
-    color: var(--text-light);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-/* Le lien "A propos de moi" */
 .about-me-link {
-    display: inline-block;
-    align-self: flex-start;
-    margin-top: 3rem;
+    font-family: var(--font-body);
     font-size: 1.1rem;
-    color: var(--text-color);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 5px;
-    transition: color 0.3s, border-color 0.3s;
+    margin-top: 2.5rem;
+    align-self: flex-start;
+    transition: color 0.3s ease;
 }
 
 .about-me-link:hover {
     color: var(--accent-color);
-    border-color: var(--accent-color);
+}
+
+
+/* 
+ * MISE EN PAGE POUR DESKTOP
+ * C'est seulement ici, pour les écrans de 992px et plus, 
+ * qu'on applique la grille complexe à deux colonnes.
+*/
+@media (min-width: 992px) {
+    .services-container-new {
+        grid-template-columns: 1fr 1.8fr; 
+        gap: 5rem;
+        grid-template-areas:
+            "image title"
+            "image list";
+        align-items: start;
+    }
+
+    .services-main-title {
+        grid-area: title;
+        font-size: clamp(6rem, 10vw, 12rem);
+    }
+
+    .services-image-wrapper {
+        grid-area: image;
+    }
+
+    .services-list {
+        grid-area: list;
+    }
+
+    .service-item {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .service-item h3 {
+        margin-bottom: 0;
+    }
 }
 
 /* ======================================================== */
@@ -635,6 +646,7 @@ body.dark-mode .image-wrapper:hover img {
 
     display: flex;
     align-items: start;
+    overflow: hidden; /* Cache les barres de défilement horizontales et verticales */
 }
 
 .contact-container-new {
@@ -729,12 +741,6 @@ body.dark-mode .image-wrapper:hover img {
     display: flex;
     flex-direction: column;
     height: 100%; 
-    
-    /* CORRECTION 2 : On force le contenu à ne jamais déborder.
-       Cela va "couper" tout ce qui dépasse, vous montrant que c'est bien contenu. */
-    overflow: hidden;
-
-    /* AJOUTEZ CES DEUX LIGNES CI-DESSOUS */
     container-type: inline-size;
     container-name: contact-column;
 }
@@ -788,16 +794,16 @@ body.dark-mode .image-wrapper:hover img {
     font-family: var(--font-headline);
     font-size: clamp(8rem, 18vw, 13rem);
     font-weight: 400;
-    line-height: 1;
+    line-height: 1,5;
     color: var(--text-color);
     user-select: none;
     position: absolute;
     
     /* CORRECTION ICI :
        'bottom: 0' le colle en bas de la colonne, sans dépasser. */
-    bottom: 0;
+    
 
-    left: 0;
+    /*right: 0;*/
     width: 100%;
     border-top: 3px solid var(--accent-color);
     padding-top: 1.5rem; 
@@ -1831,14 +1837,13 @@ body.dark-mode .dialog {
 
 .contact-background-text {
     font-family: var(--font-headline);
-    font-size: clamp(6rem, 15vw, 12rem);
+    font-size: clamp(6rem, 15vw, 9rem);
     font-weight: 900;
-    line-height: 0.8;
+    line-height: 1; /* Modified line-height to adjust text height */
     color: var(--text-color);
     user-select: none;
     position: absolute;
-    bottom: -2rem; 
-    right: -1rem;
+    bottom: -1rem; 
     
     /* LA LIGNE "z-index: -1;" A ÉTÉ SUPPRIMÉE ICI. C'EST LA CORRECTION PRINCIPALE. */
     /* On s'assure qu'il reste derrière les autres éléments avec un z-index plus bas, mais positif. */
