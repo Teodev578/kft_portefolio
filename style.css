@@ -200,6 +200,31 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
 .burger-menu.toggle .line2 { opacity: 0; }
 .burger-menu.toggle .line3 { transform: rotate(-45deg) translate(7px, -7px); }
 
+/* ======================================================== */
+/*           SÉLECTEUR DE LANGUE (AJOUT)                    */
+/* ======================================================== */
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+}
+
+.lang-link {
+    color: var(--text-color);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.lang-link:hover {
+    opacity: 1;
+}
+
+.lang-link.active {
+    opacity: 1;
+    color: var(--accent-color);
+}
 
 /* ========================================================================= */
 /*                               SECTION HERO                                */

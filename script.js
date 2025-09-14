@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ================================================================= //
     const projectCards = document.querySelectorAll('.project-card');
     const dialogs = document.querySelectorAll('.dialog');
-
     const openDialog = (dialog) => {
         if (dialog) {
             dialog.classList.add('is-open');
@@ -183,4 +182,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    
 });
