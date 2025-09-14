@@ -277,7 +277,7 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
     
     /* Ajouts pour l'animation */
     position: relative;
-    color: transparent; /* On cache le texte de base */
+    color: var(--text-color); /* Le texte est visible directement */
     display: inline-block;
 
     animation: flicker 4s infinite linear;
@@ -285,19 +285,8 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
 
 }
 
-/* Le texte visible */
-.main-headline::before {
-    content: 'DÉVELOPPEUR';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: var(--text-color);
-    overflow: hidden;
-    animation: revealText 1s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards; /* 0.5s de délai */
-    width: 0%; /* Commence masqué */
-}
+/* Le texte visible (suppression du pseudo-élément ::before) */
+
 
 /* La barre de révélation */
 .main-headline::after {
