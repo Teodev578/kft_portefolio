@@ -215,6 +215,7 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
     color: var(--text-color);
     opacity: 0.6;
     transition: opacity 0.3s ease;
+    cursor: pointer;
 }
 
 .lang-link:hover {

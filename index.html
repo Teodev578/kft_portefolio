@@ -2,16 +2,26 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Meta Description pour le SEO -->
     <meta name="description" content="Portfolio de Fabien Téo KPEKPASSi, développeur web spécialisé dans la création de sites et solutions logicielles sur mesure.">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabien Téo KPEKPASSI</title>
+
     <link rel="icon" href="assets/logo.png" type="image/png">
+
+    <!-- Meta Open Graph pour les réseaux sociaux -->
     <meta property="og:title" content="Fabien Téo KPEKPASSi - Développeur Web">
     <meta property="og:description" content="Je conçois des solutions informatiques qui vous font gagner du temps et de l'argent. Découvrez mes projets.">
-    <meta property="og:image" content="https://www.votre-domaine.com/assets/og-image.jpg">
-    <meta property="og:url" content="https://www.votre-domaine.com">
+    <meta property="og:image" content="https://www.votre-domaine.com/assets/og-image.jpg"> <!-- IMPORTANT: Mettez une URL absolue -->
+    <meta property="og:url" content="https://www.votre-domaine.com"> <!-- IMPORTANT: Mettez l'URL de votre site -->
     <meta property="og:type" content="website">
+
+    <!-- Lien vers le fichier CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- MISE À JOUR : Importation des nouvelles polices Anton SC et Roboto Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -21,12 +31,16 @@
     <!-- ======================================================== -->
     <!--                  HEADER                                  -->
     <!-- ======================================================== -->
+    <!-- Curseur Personnalisé -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-bubble"></div>
     <header>
         <div class="container header-container">
             <a href="#accueil" class="logo" aria-label="Retour à l'accueil">
                 <img src="assets/logo.png" alt="Logo Fabien Téo KPEKPASSi" class="logo-image">
                 <span>Fabien Téo KPEKPASSI</span>
             </a>
+            
             <div class="header-right">
                 <nav class="main-nav" id="main-nav">
                     <ul class="nav-links">
@@ -37,16 +51,20 @@
                         <li><a href="#contact" data-key="nav_contact">Contacts</a></li>
                     </ul>
                 </nav>
+
                 <div class="header-actions">
+                    <!-- NOUVEAU : Sélecteur de langue -->
                     <div class="language-switcher">
                         <a href="#" class="lang-link active" data-lang="fr">FR</a>
-                        <span>|</span>
+                        <span>/</span>
                         <a href="#" class="lang-link" data-lang="en">EN</a>
                     </div>
+
                     <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
                         <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
                         <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                     </button>
+                    
                     <div class="burger-menu" id="burger-menu" role="button" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation">
                         <div class="line1"></div>
                         <div class="line2"></div>
@@ -58,25 +76,29 @@
     </header>
 
     <main>
-        <!-- SECTION ACCUEIL -->
+        <!-- ======================================================== -->
+        <!--             SECTION ACCUEIL - VERSION FINALE             -->
+        <!-- ======================================================== -->
         <section id="accueil" class="hero">
             <div class="hero-content-grid">
+                
                 <div class="hero-main-content">
                     <div class="hero-text">
                         <h1 class="main-headline" data-key="hero_headline">DÉVELOPPEUR</h1>
                         <p class="intro-text" data-key="hero_intro">
-                            Je suis Fabien Téo KPEKPASSi, développeur <strong>full stack</strong> spécialisé dans le développement d'applications avec <strong>Flutter</strong>. 
-                            Je conçois des solutions logicielles efficaces pour automatiser vos tâches, optimiser vos processus métier et vous faire gagner du temps comme de l'argent.
+                            Je suis Fabien Téo KPEKPASSi, développeur créatif. Je conçois des solutions logicielles efficaces pour automatiser vos tâches, optimiser vos processus métier et vous faire gagner du temps comme de l'argent.
                         </p>
                     </div>
+
                     <div class="hero-actions">
                         <a href="#contact" class="hero-link"><span data-key="hero_contact_btn">Contactez-moi</span></a>
-                        <a href="assets/CV_Fabien_Teo_KPEKPASSi.pdf" download="..." class="hero-link"><span data-key="hero_cv_btn">télécharger mon CV</span></a>
+                        <a href="assets/CV_Fabien_Teo_KPEKPASSi.pdf" download class="hero-link"><span data-key="hero_cv_btn">télécharger mon CV</span></a>
                     </div>
                 </div>
+
                 <div class="hero-visual">
                     <div class="image-wrapper">
-                        <img src="assets/portrait.avif" alt="Portrait de Fabien Téo KPEKPASSi">
+                        <img src="assets/portrait.png" alt="Portrait de Fabien Téo KPEKPASSi">
                     </div>
                     <div class="visual-caption">
                         <span class="caption-name">Fabien Téo KPEKPASSi</span>
@@ -86,192 +108,303 @@
             </div>
         </section>
 
-        <!-- SECTION SERVICES -->
-        <section id="services" class="services-new">
-            <div class="services-container-new">
-                <h2 class="services-main-title" data-key="services_title">*SERVICES</h2>
-                <div class="services-image-wrapper">
-                    <img src="assets/service_mockup.jpg" alt="Exemple de code sur un écran et une application mobile">
-                </div>
-                <div class="services-list">
-                    <div class="service-item">
-                        <h3 data-key="service_1_title">*Développement sur mesure</h3>
-                        <p data-key="service_1_desc">Création d'outils web et mobiles pensés pour votre métier, avec une attention portée sur l'efficacité, la simplicité et l'expérience utilisateur.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3 data-key="service_2_title">*Automatisation de vos tâches</h3>
-                        <p data-key="service_2_desc">Remplacez les tâches manuelles par des processus fluides et intelligents. Moins d'erreurs, plus de temps pour ce qui compte.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3 data-key="service_3_title">*Maintenance et amélioration continue</h3>
-                        <p data-key="service_3_desc">Je reste à vos côtés pour faire évoluer vos outils, corriger les problèmes rapidement et intégrer de nouvelles fonctionnalités.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3 data-key="service_4_title">*Ouvert aux opportunités</h3>
-                        <p data-key="service_4_desc">Je suis également disponible pour des missions freelance, des contrats de stage ou des propositions d'emploi dans le domaine du développement.</p>
-                    </div>
-                    <a href="#about" class="about-me-link" data-key="services_scroll_about">↓ A propos de moi</a>
-                </div>
-            </div>
-        </section>
+<!-- ======================================================== -->
+<!--        NOUVELLE SECTION SERVICES (MODIFIÉE)              -->
+<!-- ======================================================== -->
+<section id="services" class="services-new">
+    <div class="services-container-new">
+        
+        <h2 class="services-main-title" data-key="services_title">*SERVICES</h2>
+        
+        <div class="services-image-wrapper">
+            <img src="assets/service_mockup.jpg" alt="Exemple de code sur un écran et une application mobile">
+        </div>
 
-        <!-- SECTION À PROPOS -->
-        <section id="about" class="about-section">
-            <div class="about-container">
-                <div class="about-image-wrapper">
-                    <img src="assets/portrait-3.png" alt="Photo de Fabien Téo KPEKPASSi">
-                </div>
-                <div class="about-intro">
-                    <h2 class="about-name">Fabien Téo KPEKPASSi</h2>
-                    <p class="about-subtitle" data-key="about_subtitle">Développeur créatif</p>
-                    <p class="about-description" data-key="about_description">
-                        Mon parcours est marqué par une démarche autodidacte constante, complétée par une formation en Licence Développement d'application à l'Université Catholique de L’Afrique De L’Ouest - Unité Universitaire du Togo (UCAO-UUT) de 2021 à 2024. C'est cette curiosité et cette soif d'apprendre par moi-même qui m'ont permis de maîtriser les technologies actuelles et de transformer des idées complexes en solutions numériques concrètes, intuitives et performantes.
-                    </p>
-                </div>
-                <div class="about-details-grid">
-                    <article class="about-detail-item">
-                        <h3 class="detail-title" data-key="about_study_title">Etude :</h3>
-                        <div class="detail-content" data-key="about_study_content">
-                            <p>- 2021 - 2024:<br>
-                               Université Catholique De L'Afrique De L'Ouest (UCAO-UUT)</p>
-                            <p>Licence développement d'application</p>
-                        </div>
-                    </article>
-                    <article class="about-detail-item">
-                        <h3 class="detail-title" data-key="about_skills_title">Compétences :</h3>
-                        <div class="detail-content" data-key="about_skills_content">
-                            <ul>
-                                <li>-Recherche et dévellopement : 5/5</li>
-                                <li>-Flutter : 4/5</li>
-                                <li>-Figma : 4/5</li>
-                                <li>-Python : 4/5</li>
-                                <li>-UX/UI : 4/5</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="about-detail-item">
-                        <h3 class="detail-title" data-key="about_exp_title">Experience clé :</h3>
-                        <div class="detail-content">
-                            <p data-key="about_exp_content">- Bien que je n'aie pas encore eu d'expérience en entreprise, j'ai eu l'occasion de développer un projet complet pour une quincaillerie, utilisé en conditions réelles.</p>
-                        </div>
-                    </article>
-                </div>
-                <a href="#projets" class="about-projects-link" data-key="about_scroll_projects">↓ Quelques projets</a>
+        <div class="services-list">
+            <div class="service-item">
+                <h3 data-key="service_1_title">*Développement sur mesure</h3>
+                <p data-key="service_1_desc">Création d'outils web et mobiles pensés pour votre métier, avec une attention portée sur l'efficacité, la simplicité et l'expérience utilisateur.</p>
             </div>
-        </section>
+            <div class="service-item">
+                <h3 data-key="service_2_title">*Automatisation de vos tâches</h3>
+                <p data-key="service_2_desc">Remplacez les tâches manuelles par des processus fluides et intelligents. Moins d'erreurs, plus de temps pour ce qui compte.</p>
+            </div>
+            <div class="service-item">
+                <h3 data-key="service_3_title">*Maintenance et amélioration continue</h3>
+                <p data-key="service_3_desc">Je reste à vos côtés pour faire évoluer vos outils, corriger les problèmes rapidement et intégrer de nouvelles fonctionnalités.</p>
+            </div>
+            <div class="service-item">
+                <h3 data-key="service_4_title">*Ouvert aux opportunités</h3>
+                <p data-key="service_4_desc">Je suis également disponible pour des missions freelance, des contrats de stage ou des propositions d'emploi dans le domaine du développement.</p>
+            </div>
 
-        <!-- SECTION PROJETS -->
-        <section id="projets" class="projects-section">
-            <div class="projects-container">
-                <div class="projects-header">
-                    <span class="header-symbol">*</span>
-                    <div class="header-text">
-                        <h2 class="projects-title" data-key="projects_header_title">MES PROJETS</h2>
-                        <p data-key="projects_header_desc">Voici une sélection de projets que j'ai développés dans le cadre de mon apprentissage en développement.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="projects-list-wrapper">
-                <div class="projects-list">
-                    <article class="project-card" data-dialog-target="#dialog-projet-pro">
-                        <div class="project-card-inner-container">
-                            <div class="card-number">#1</div>
-                            <div class="card-content">
-                                <div class="card-info">
-                                    <h3 class="card-title" data-key="project_1_title">GESTION DE QUINCAILLERIE</h3>
-                                    <div class="card-tags" data-key="project_1_tags">
-                                        <span>Flutter</span> | <span>Firebase</span> | <span>Gestion de stock</span> | <span>Facturation</span>
-                                    </div>
-                                </div>
-                                <div class="card-action" data-key="project_learn_more">en savoir plus -></div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project-card" data-dialog-target="#dialog-projet-gmailsorter">
-                        <div class="project-card-inner-container">
-                            <div class="card-number">#2</div>
-                            <div class="card-content">
-                                <div class="card-info">
-                                    <h3 class="card-title" data-key="project_2_title">GmailSorter — IA de tri automatique d’e-mails</h3>
-                                    <div class="card-tags" data-key="project_2_tags">
-                                        <span>Python</span> | <span>Gemini 1.5</span> | <span>Gmail API</span> | <span>OAuth2</span> | <span>Batching</span>
-                                    </div>
-                                </div>
-                                <div class="card-action" data-key="project_learn_more_2">en savoir plus →</div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project-card" data-dialog-target="#dialog-projet-scolaire">
-                        <div class="project-card-inner-container">
-                            <div class="card-number">#3</div>
-                            <div class="card-content">
-                                <div class="card-info">
-                                    <h3 class="card-title" data-key="project_3_title">ALGORITHME IA</h3>
-                                    <div class="card-tags" data-key="project_3_tags">
-                                        <span>Python</span> | <span>Scikit-learn</span> | <span>Analyse de données</span>
-                                    </div>
-                                </div>
-                                <div class="card-action" data-key="project_learn_more_3">en savoir plus -></div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+            <a href="#about" class="about-me-link" data-key="services_scroll_about">↓ A propos de moi</a>
+        </div>
 
-        <!-- SECTION CONTACT -->
-        <section id="contact" class="contact-section-new">
-            <div class="contact-container-new">
-                <div class="contact-form-col">
-                    <h2 class="contact-title-new" data-key="contact_title">Donnons vie à votre projet :</h2>
-                    <p class="contact-intro-new" data-key="contact_intro">
-                        Mon objectif : vous simplifier la vie en transformant vos défis quotidiens en applications intuitives et performantes. Les tâches complexes, répétitives ou fastidieuses ? C'est mon terrain de jeu. Racontez-moi votre idée, et construisons ensemble la solution qui vous fera gagner du temps et de la sérénité et de l'argent.
-                    </p>
-                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="8efd2e12-79ac-4611-989d-e4c448541f75">
-                        <div class="form-group-new">
-                            <input type="text" id="name" name="name" placeholder="Votre nom :" required data-key="contact_form_name">
-                        </div>
-                        <div class="form-group-new">
-                            <input type="email" id="email" name="email" placeholder="Votre email :" required data-key="contact_form_email">
-                        </div>
-                        <div class="form-group-new">
-                            <textarea id="message" name="message" placeholder="Votre message :" rows="5" required data-key="contact_form_message"></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn-new">
-                            <span data-key="contact_form_submit">Envoyer</span>
-                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>                        
-                        </button>
-                        <div id="form-status" class="form-status-new"></div>
-                    </form>
+    </div>
+</section>
+
+<!-- ======================================================== -->
+<!--        SECTION À PROPOS DE MOI (VERSION CORRIGÉE)        -->
+<!-- ======================================================== -->
+<section id="about" class="about-section">
+    <div class="about-container">
+        
+        <div class="about-image-wrapper">
+            <img src="assets/portrait-3.png" alt="Photo de Fabien Téo KPEKPASSi">
+        </div>
+
+        <div class="about-intro">
+            <h2 class="about-name">Fabien Téo KPEKPASSi</h2>
+            <p class="about-subtitle" data-key="about_subtitle">Développeur créatif</p>
+            <p class="about-description" data-key="about_description">
+                Mon parcours est marqué par une démarche autodidacte constante, complétée par une formation en Licence Développement d'application à l'Université Catholique de L’Afrique De L’Ouest - Unité Universitaire du Togo (UCAO-UUT) de 2021 à 2024. C'est cette curiosité et cette soif d'apprendre par moi-même qui m'ont permis de maîtriser les technologies actuelles et de transformer des idées complexes en solutions numériques concrètes, intuitives et performantes.
+            </p>
+        </div>
+
+        <div class="about-details-grid">
+            
+            <article class="about-detail-item">
+                <h3 class="detail-title" data-key="about_study_title">Etude :</h3>
+                <div class="detail-content" data-key="about_study_content">
+                    <p>- 2021 - 2024:<br>
+                       Université Catholique De L'Afrique De L'Ouest (UCAO-UUT)</p>
+                    <p>Licence développement d'application</p>
                 </div>
-                <div class="contact-info-col">
-                    <div class="contact-cta-new">
-                        <span data-key="contact_cta">↓ CONTACTEZ-MOI</span>
-                    </div>
-                    <div class="contact-details-group">
-                        <div class="contact-links-new">
-                            <a href="https://www.facebook.com/TeoDePeya/" target="_blank" rel="noopener noreferrer">
-                                <span data-key="contact_social_fb">Facebook</span>
-                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                            <a href="https://www.instagram.com/fabienkpekpassi/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">
-                                <span data-key="contact_social_ig">Instagram</span>
-                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/fabien-kpekpassi-7aba12229/" target="_blank" rel="noopener noreferrer">
-                                <span data-key="contact_social_li">Linkedin</span>
-                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
+            </article>
+
+            <article class="about-detail-item">
+                <h3 class="detail-title" data-key="about_skills_title">Compétences :</h3>
+                <div class="detail-content" data-key="about_skills_content">
+                    <ul>
+                        <li>-Recherche et dévellopement : 5/5</li>
+                        <li>-Flutter : 4/5</li>
+                        <li>-Figma : 4/5</li>
+                        <li>-Python : 4/5</li>
+                        <li>-UX/UI : 4/5</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="about-detail-item">
+                <h3 class="detail-title" data-key="about_exp_title">Experience clé :</h3>
+                <div class="detail-content">
+                    <p data-key="about_exp_content">- Bien que je n'aie pas encore eu d'expérience en entreprise, j'ai eu l'occasion de développer un projet complet pour une quincaillerie, utilisé en conditions réelles.</p>
+                </div>
+            </article>
+
+        </div>
+
+        <a href="#projets" class="about-projects-link" data-key="about_scroll_projects">↓ Quelques projets</a>
+
+    </div>
+</section>
+
+
+<!-- ======================================================== -->
+<!--           SECTION MES PROJETS (VERSION CORRIGÉE)         -->
+<!-- ======================================================== -->
+<section id="projets" class="projects-section">
+
+    <div class="projects-container">
+        <div class="projects-header">
+            <span class="header-symbol">*</span>
+            <div class="header-text">
+                <h2 class="projects-title" data-key="projects_header_title">MES PROJETS</h2>
+                <p data-key="projects_header_desc">Voici une sélection de projets que j'ai développés dans le cadre de mon apprentissage en développement.</p>
+            </div>
+        </div>
+    </div>
+    <div class="projects-list-wrapper">
+    <div class="projects-list">
+        <article class="project-card" data-dialog-target="#dialog-projet-pro">
+            <div class="project-card-inner-container">
+                <div class="card-number">#1</div>
+                <div class="card-content">
+                    <div class="card-info">
+                        <h3 class="card-title" data-key="project_1_title">GESTION DE QUINCAILLERIE</h3>
+                        <div class="card-tags">
+                            <span>Flutter</span> | <span>Firebase</span> | <span>Gestion de stock</span> | <span>Facturation</span>
                         </div>
-                        <a href="mailto:teokpekpassi@gmail.com" class="contact-email-new">teokpekpassi@gmail.com</a>
                     </div>
-                    <div class="contact-background-text">CONTACT</div>
+                    <div class="card-action" data-key="project_learn_more">en savoir plus -></div>
                 </div>
             </div>
-        </section>
+        </article>
+
+        <article class="project-card" data-dialog-target="#dialog-projet-gmailsorter">
+            <div class="project-card-inner-container">
+                <div class="card-number">#2</div>
+                <div class="card-content">
+                    <div class="card-info">
+                        <h3 class="card-title" data-key="project_2_title">GmailSorter — IA de tri automatique d’e-mails</h3>
+                        <div class="card-tags">
+                            <span>Python</span> | <span>Gemini 1.5</span> | <span>Gmail API</span> | <span>OAuth2</span> | <span>Batching</span>
+                        </div>
+                    </div>
+                    <div class="card-action" data-key="project_learn_more_2">en savoir plus →</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card" data-dialog-target="#dialog-projet-scolaire">
+            <div class="project-card-inner-container">
+                <div class="card-number">#3</div>
+                <div class="card-content">
+                    <div class="card-info">
+                        <h3 class="card-title" data-key="project_3_title">ALGORITHME IA</h3>
+                        <div class="card-tags">
+                            <span>Python</span> | <span>Scikit-learn</span> | <span>Analyse de données</span>
+                        </div>
+                    </div>
+                    <div class="card-action" data-key="project_learn_more_3">en savoir plus -></div>
+                </div>
+            </div>
+        </article>
+    </div>
+    </div>
+</section>
+
+<!-- ======================================================== -->
+<!--     DIALOGUE POUR PROJET PRO (AVEC TRADUCTIONS)          -->
+<!-- ======================================================== -->
+<div class="dialog" id="dialog-projet-pro">
+  <div class="dialog-content">
+    <div class="dialog-main-layout">
+      <div class="dialog-visual">
+        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop" alt="Capture de l'application de gestion BMS sur Windows" />
+      </div>
+
+      <div class="dialog-header-content">
+        <h2 class="dialog-title" data-key="dialog_bms_title">
+          <span class="dialog-title-symbol">*</span>Bright Morning Star (BMS)
+        </h2>
+        <p class="dialog-short-description" data-key="dialog_bms_short_desc">
+          Application de gestion de quincaillerie développée avec Flutter et optimisée pour Windows, conçue pour automatiser la gestion des ventes, des stocks et des clients.
+        </p>
+        <div class="dialog-meta">
+          <span>Flutter</span><span>Firebase</span><span>Windows</span><span>Facturation</span><span>PDF/Excel</span>
+        </div>
+      </div>
+
+      <div class="dialog-body">
+        <p data-key="dialog_bms_p1">
+          Avant ce projet, la gestion de la quincaillerie reposait sur des méthodes manuelles lentes et sources d’erreurs. J’ai conçu une solution sur-mesure pour améliorer la productivité, suivre les ventes en temps réel et fiabiliser la facturation.
+        </p>
+        <p data-key="dialog_bms_p2">
+          L’application, développée avec Flutter, fonctionne actuellement sur Windows. Elle permet d’enregistrer les ventes, gérer les produits et les fournisseurs, suivre les dettes clients, et générer automatiquement des rapports PDF ou Excel.
+        </p>
+        <p data-key="dialog_bms_p3">
+          J’ai utilisé Firebase comme backend sécurisé (Authentication, Firestore, Realtime Database), assurant une synchronisation fluide des données, même en cas de coupure réseau temporaire. Une attention particulière a été portée à l’expérience utilisateur, avec une interface intuitive et un tableau de bord visuel.
+        </p>
+        <p data-key="dialog_bms_p4">
+          Ce projet démontre ma capacité à concevoir une application métier complète : architecture, UI/UX, gestion des données et déploiement via MSIX.
+        </p>
+      </div>
+    </div>
+    <button class="dialog-close" aria-label="Fermer la fenêtre" data-key="dialog_close">X Fermer</button>
+  </div>
+</div>
+
+<!-- ======================================================== -->
+<!--     DIALOGUE GMAIL SORTER (AVEC TRADUCTIONS)             -->
+<!-- ======================================================== -->
+<div class="dialog" id="dialog-projet-gmailsorter">
+    <div class="dialog-content">
+        <div class="dialog-main-layout">
+            <div class="dialog-visual">
+                <img src="https://images.unsplash.com/photo-1585079551902-845ccf1b31b1?q=80&w=2070&auto=format&fit=crop" alt="Gmail tri automatique IA">
+            </div>
+
+            <div class="dialog-header-content">
+                <h2 class="dialog-title" data-key="dialog_gmail_title">
+                    <span class="dialog-title-symbol">*</span>GmailSorter — IA de tri automatique des e-mails
+                </h2>
+                <p class="dialog-short-description" data-key="dialog_gmail_short_desc">
+                    Script Python intelligent qui analyse et trie automatiquement les e-mails Gmail à l’aide de l’IA Gemini et de l’API Gmail, en appliquant des libellés personnalisés.
+                </p>
+                <div class="dialog-meta">
+                    <span>Python</span><span>Gmail API</span><span>Gemini</span><span>OAuth2</span>
+                </div>
+            </div>
+
+            <div class="dialog-body">
+                <p data-key="dialog_gmail_p1">Le projet GmailSorter répond à un besoin clair : automatiser le tri des e-mails pour gagner du temps et rester organisé. En combinant les capacités de l'IA générative Gemini avec les APIs Gmail, le script lit chaque e-mail, en extrait les métadonnées clés (expéditeur, sujet, extrait), et le classe intelligemment dans une catégorie définie (Professionnel, Factures, Publicité, etc.).</p>
+                <p data-key="dialog_gmail_p2">Le script fonctionne par lots, applique les libellés automatiquement, et peut archiver les mails traités. Il inclut une gestion robuste des erreurs via retries exponentiels, un mode “Dry Run” pour les tests, et un résumé statistique à chaque exécution.</p>
+                <p data-key="dialog_gmail_p3">J'ai développé ce projet pour explorer l'intégration d'une IA générative dans un usage concret, tout en respectant les bonnes pratiques de modularité, sécurité (OAuth2, clés API dans .env), et clarté du code. Ce fut une excellente opportunité pour solidifier mes compétences en automatisation, en APIs Google, et en design d’outils pratiques.</p>
+            </div>
+        </div>
+        <button class="dialog-close" data-key="dialog_close_2">X Fermer</button>
+    </div>
+</div>
+
+
+<!-- DIALOGUE POUR PROJET SCOLAIRE -->
+<div class="dialog" id="dialog-projet-scolaire">
+    <div class="dialog-content">
+        <p data-key="dialog_school_content">Le contenu détaillé du projet scolaire apparaîtra ici.</p>
+        <button class="dialog-close" data-key="dialog_close_3">X Fermer</button>
+    </div>
+</div>
+
+<!-- ======================================================== -->
+<!--                SECTION CONTACT (NOUVELLE VERSION)        -->
+<!-- ======================================================== -->
+<section id="contact" class="contact-section-new">
+    <div class="contact-container-new">
+
+        <div class="contact-form-col">
+            <h2 class="contact-title-new" data-key="contact_title">Donnons vie à votre projet :</h2>
+            <p class="contact-intro-new" data-key="contact_intro">
+                Mon objectif : vous simplifier la vie en transformant vos défis quotidiens en applications intuitives et performantes. Les tâches complexes, répétitives ou fastidieuses ? C'est mon terrain de jeu. Racontez-moi votre idée, et construisons ensemble la solution qui vous fera gagner du temps et de la sérénité et de l'argent.
+            </p>
+
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="8efd2e12-79ac-4611-989d-e4c448541f75">
+                <div class="form-group-new">
+                    <input type="text" id="name" name="name" placeholder="Votre nom :" required data-key="contact_form_name">
+                </div>
+                <div class="form-group-new">
+                    <input type="email" id="email" name="email" placeholder="Votre email :" required data-key="contact_form_email">
+                </div>
+                <div class="form-group-new">
+                    <textarea id="message" name="message" placeholder="Votre message :" rows="5" required data-key="contact_form_message"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn-new">
+                    <span data-key="contact_form_submit">Envoyer</span>
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>                        
+                </button>
+                <div id="form-status" class="form-status-new"></div>
+            </form>
+        </div>
+
+        <div class="contact-info-col">
+            <div class="contact-cta-new">
+                <span data-key="contact_cta">↓ CONTACTEZ-MOI</span>
+            </div>
+            <div class="contact-details-group">
+                <div class="contact-links-new">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <span data-key="contact_social_fb">Facebook</span>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <span data-key="contact_social_ig">Instagram</span>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                        <span data-key="contact_social_li">Linkedin</span>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 13.5L13.5 1.5M13.5 1.5H3.5M13.5 1.5V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+                <a href="mailto:teokpekpassi@gmail.com" class="contact-email-new">teokpekpassi@gmail.com</a>
+            </div>
+            <div class="contact-background-text">CONTACT</div>
+        </div>
+    </div>
+</section>
     </main>
-
     <script src="script.js"></script>
 </body>
 </html>

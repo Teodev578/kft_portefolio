@@ -5,16 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // ================================================================= //
     const translations = {
         fr: {
+            // Navigation
             nav_home: "Accueil",
             nav_services: "Service",
             nav_about: "À propos",
             nav_projects: "Projets",
             nav_contact: "Contacts",
+            // Section Héros
             hero_headline: "DÉVELOPPEUR",
-            hero_intro: `Je suis Fabien Téo KPEKPASSi, développeur <strong>full stack</strong> spécialisé dans le développement d'applications avec <strong>Flutter</strong>. Je conçois des solutions logicielles efficaces pour automatiser vos tâches, optimiser vos processus métier et vous faire gagner du temps comme de l'argent.`,
+            hero_intro: "Je suis Fabien Téo KPEKPASSi, développeur créatif. Je conçois des solutions logicielles efficaces pour automatiser vos tâches, optimiser vos processus métier et vous faire gagner du temps comme de l'argent.",
             hero_contact_btn: "Contactez-moi",
             hero_cv_btn: "télécharger mon CV",
             hero_scroll_services: "↓ Mes services",
+            // Section Services
             services_title: "*SERVICES",
             service_1_title: "*Développement sur mesure",
             service_1_desc: "Création d'outils web et mobiles pensés pour votre métier, avec une attention portée sur l'efficacité, la simplicité et l'expérience utilisateur.",
@@ -25,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             service_4_title: "*Ouvert aux opportunités",
             service_4_desc: "Je suis également disponible pour des missions freelance, des contrats de stage ou des propositions d'emploi dans le domaine du développement.",
             services_scroll_about: "↓ A propos de moi",
+            // Section À Propos
             about_subtitle: "Développeur créatif",
             about_description: "Mon parcours est marqué par une démarche autodidacte constante, complétée par une formation en Licence Développement d'application à l'Université Catholique de L’Afrique De L’Ouest - Unité Universitaire du Togo (UCAO-UUT) de 2021 à 2024. C'est cette curiosité et cette soif d'apprendre par moi-même qui m'ont permis de maîtriser les technologies actuelles et de transformer des idées complexes en solutions numériques concrètes, intuitives et performantes.",
             about_study_title: "Etude :",
@@ -34,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             about_exp_title: "Experience clé :",
             about_exp_content: "- Bien que je n'aie pas encore eu d'expérience en entreprise, j'ai eu l'occasion de développer un projet complet pour une quincaillerie, utilisé en conditions réelles.",
             about_scroll_projects: "↓ Quelques projets",
+            // Section Projets
             projects_header_title: "MES PROJETS",
             projects_header_desc: "Voici une sélection de projets que j'ai développés dans le cadre de mon apprentissage en développement.",
             project_1_title: "GESTION DE QUINCAILLERIE",
@@ -42,6 +47,23 @@ document.addEventListener('DOMContentLoaded', () => {
             project_learn_more_3: "en savoir plus ->",
             project_2_title: "GmailSorter — IA de tri automatique d’e-mails",
             project_3_title: "ALGORITHME IA",
+            // Dialogues (Modals)
+            dialog_bms_title: "<span class='dialog-title-symbol'>*</span>Bright Morning Star (BMS)",
+            dialog_bms_short_desc: "Application de gestion de quincaillerie développée avec Flutter et optimisée pour Windows, conçue pour automatiser la gestion des ventes, des stocks et des clients.",
+            dialog_bms_p1: "Avant ce projet, la gestion de la quincaillerie reposait sur des méthodes manuelles lentes et sources d’erreurs. J’ai conçu une solution sur-mesure pour améliorer la productivité, suivre les ventes en temps réel et fiabiliser la facturation.",
+            dialog_bms_p2: "L’application, développée avec Flutter, fonctionne actuellement sur Windows. Elle permet d’enregistrer les ventes, gérer les produits et les fournisseurs, suivre les dettes clients, et générer automatiquement des rapports PDF ou Excel.",
+            dialog_bms_p3: "J’ai utilisé Firebase comme backend sécurisé (Authentication, Firestore, Realtime Database), assurant une synchronisation fluide des données, même en cas de coupure réseau temporaire. Une attention particulière a été portée à l’expérience utilisateur, avec une interface intuitive et un tableau de bord visuel.",
+            dialog_bms_p4: "Ce projet démontre ma capacité à concevoir une application métier complète : architecture, UI/UX, gestion des données et déploiement via MSIX.",
+            dialog_gmail_title: "<span class='dialog-title-symbol'>*</span>GmailSorter — IA de tri automatique des e-mails",
+            dialog_gmail_short_desc: "Script Python intelligent qui analyse et trie automatiquement les e-mails Gmail à l’aide de l’IA Gemini et de l’API Gmail, en appliquant des libellés personnalisés.",
+            dialog_gmail_p1: "Le projet GmailSorter répond à un besoin clair : automatiser le tri des e-mails pour gagner du temps et rester organisé. En combinant les capacités de l'IA générative Gemini avec les APIs Gmail, le script lit chaque e-mail, en extrait les métadonnées clés (expéditeur, sujet, extrait), et le classe intelligemment dans une catégorie définie (Professionnel, Factures, Publicité, etc.).",
+            dialog_gmail_p2: "Le script fonctionne par lots, applique les libellés automatiquement, et peut archiver les mails traités. Il inclut une gestion robuste des erreurs via retries exponentiels, un mode “Dry Run” pour les tests, et un résumé statistique à chaque exécution.",
+            dialog_gmail_p3: "J'ai développé ce projet pour explorer l'intégration d'une IA générative dans un usage concret, tout en respectant les bonnes pratiques de modularité, sécurité (OAuth2, clés API dans .env), et clarté du code. Ce fut une excellente opportunité pour solidifier mes compétences en automatisation, en APIs Google, et en design d’outils pratiques.",
+            dialog_school_content: "Le contenu détaillé du projet scolaire apparaîtra ici.",
+            dialog_close: "X Fermer",
+            dialog_close_2: "X Fermer",
+            dialog_close_3: "X Fermer",
+            // Section Contact
             contact_title: "Donnons vie à votre projet :",
             contact_intro: "Mon objectif : vous simplifier la vie en transformant vos défis quotidiens en applications intuitives et performantes. Les tâches complexes, répétitives ou fastidieuses ? C'est mon terrain de jeu. Racontez-moi votre idée, et construisons ensemble la solution qui vous fera gagner du temps et de la sérénité et de l'argent.",
             contact_form_name: "Votre nom :",
@@ -54,16 +76,19 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_social_li: "Linkedin",
         },
         en: {
+            // Navigation
             nav_home: "Home",
             nav_services: "Services",
             nav_about: "About",
             nav_projects: "Projects",
             nav_contact: "Contact",
-            hero_headline: "developer",
-            hero_intro: `I am Fabien Téo KPEKPASSi, a <strong>full stack</strong> developer specializing in application development with <strong>Flutter</strong>. I design effective software solutions to automate your tasks, optimize your business processes, and save you time and money.`,
+            // Hero Section
+            hero_headline: "DEVELOPER",
+            hero_intro: "I am Fabien Téo KPEKPASSi, a creative developer. I design effective software solutions to automate your tasks, optimize your business processes, and save you time and money.",
             hero_contact_btn: "Contact me",
             hero_cv_btn: "download my resume",
             hero_scroll_services: "↓ My services",
+            // Services Section
             services_title: "*SERVICES",
             service_1_title: "*Custom Development",
             service_1_desc: "Creation of web and mobile tools designed for your business, with a focus on efficiency, simplicity, and user experience.",
@@ -74,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             service_4_title: "*Open to Opportunities",
             service_4_desc: "I am also available for freelance missions, internship contracts, or job offers in the development field.",
             services_scroll_about: "↓ About me",
+            // About Section
             about_subtitle: "Creative Developer",
             about_description: "My journey is marked by a constant self-taught approach, complemented by a Bachelor's degree in Application Development from the Catholic University of West Africa - Togo University Unit (UCAO-UUT) from 2021 to 2024. It is this curiosity and thirst for self-learning that have allowed me to master current technologies and transform complex ideas into concrete, intuitive, and high-performing digital solutions.",
             about_study_title: "Education:",
@@ -83,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             about_exp_title: "Key Experience:",
             about_exp_content: "- Although I have not yet had corporate experience, I had the opportunity to develop a complete project for a hardware store, which is used in real-world conditions.",
             about_scroll_projects: "↓ Some projects",
+            // Projects Section
             projects_header_title: "MY PROJECTS",
             projects_header_desc: "Here is a selection of projects that I have developed as part of my development learning.",
             project_1_title: "HARDWARE STORE MANAGEMENT",
@@ -91,6 +118,23 @@ document.addEventListener('DOMContentLoaded', () => {
             project_learn_more_3: "learn more ->",
             project_2_title: "GmailSorter — AI-powered email sorter",
             project_3_title: "AI ALGORITHM",
+            // Dialogs (Modals)
+            dialog_bms_title: "<span class='dialog-title-symbol'>*</span>Bright Morning Star (BMS)",
+            dialog_bms_short_desc: "Hardware store management application developed with Flutter and optimized for Windows, designed to automate sales, inventory, and customer management.",
+            dialog_bms_p1: "Before this project, the hardware store's management relied on slow, error-prone manual methods. I designed a custom solution to improve productivity, track sales in real-time, and ensure reliable invoicing.",
+            dialog_bms_p2: "The application, developed with Flutter, currently runs on Windows. It allows for recording sales, managing products and suppliers, tracking customer debts, and automatically generating PDF or Excel reports.",
+            dialog_bms_p3: "I used Firebase as a secure backend (Authentication, Firestore, Realtime Database), ensuring smooth data synchronization, even during temporary network outages. Special attention was paid to the user experience, with an intuitive interface and a visual dashboard.",
+            dialog_bms_p4: "This project demonstrates my ability to design a complete business application: architecture, UI/UX, data management, and deployment via MSIX.",
+            dialog_gmail_title: "<span class='dialog-title-symbol'>*</span>GmailSorter — AI-powered email sorter",
+            dialog_gmail_short_desc: "An intelligent Python script that automatically analyzes and sorts Gmail emails using the Gemini AI and the Gmail API, applying custom labels.",
+            dialog_gmail_p1: "The GmailSorter project addresses a clear need: automating email sorting to save time and stay organized. By combining the capabilities of the Gemini generative AI with Gmail APIs, the script reads each email, extracts key metadata (sender, subject, snippet), and intelligently classifies it into a defined category (Professional, Invoices, Promotions, etc.).",
+            dialog_gmail_p2: "The script operates in batches, applies labels automatically, and can archive processed emails. It includes robust error handling with exponential backoff, a 'Dry Run' mode for testing, and a statistical summary after each execution.",
+            dialog_gmail_p3: "I developed this project to explore the integration of a generative AI into a practical use case, while adhering to best practices in modularity, security (OAuth2, API keys in .env), and code clarity. It was an excellent opportunity to solidify my skills in automation, Google APIs, and practical tool design.",
+            dialog_school_content: "Detailed content for the school project will appear here.",
+            dialog_close: "X Close",
+            dialog_close_2: "X Close",
+            dialog_close_3: "X Close",
+            // Contact Section
             contact_title: "Let's bring your project to life:",
             contact_intro: "My goal: to simplify your life by transforming your daily challenges into intuitive and high-performing applications. Complex, repetitive, or tedious tasks? That's my playground. Tell me about your idea, and let's build the solution together that will save you time, peace of mind, and money.",
             contact_form_name: "Your name:",
@@ -118,10 +162,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (el.placeholder) {
                     el.placeholder = translation;
                 } else {
+                    // Utilise innerHTML pour interpréter les balises comme <strong> ou <br>
                     el.innerHTML = translation;
                 }
             }
         });
+        // Met à jour l'attribut lang de la balise <html> pour le SEO et l'accessibilité
         document.documentElement.lang = lang;
     }
 
@@ -132,13 +178,16 @@ document.addEventListener('DOMContentLoaded', () => {
             
             translatePage(selectedLang);
 
+            // Gère la classe 'active' pour le style visuel
             languageLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
 
+            // Sauvegarde le choix dans le localStorage
             localStorage.setItem('language', selectedLang);
         });
     });
 
+    // Au chargement, vérifie s'il y a une langue sauvegardée, sinon utilise 'fr' par défaut
     const savedLang = localStorage.getItem('language') || 'fr';
     translatePage(savedLang);
     languageLinks.forEach(l => {
@@ -327,5 +376,4 @@ document.addEventListener('DOMContentLoaded', () => {
             if (openDialogEl) closeDialog(openDialogEl);
         }
     });
-
 });
