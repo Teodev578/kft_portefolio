@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
             project_learn_more_3: "en savoir plus ->",
             project_2_title: "GmailSorter — IA de tri automatique d’e-mails",
             project_3_title: "ALGORITHME IA",
+
+            // AJOUTEZ CETTE LIGNE
+            projects_github_link: "Découvrez plus de projets sur mon GitHub ➔",
+
             // Dialogues (Modals)
             dialog_bms_title: "<span class='dialog-title-symbol'>*</span>Bright Morning Star (BMS)",
             dialog_bms_short_desc: "Application de gestion de quincaillerie développée avec Flutter et optimisée pour Windows, conçue pour automatiser la gestion des ventes, des stocks et des clients.",
@@ -147,6 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_social_li: "Linkedin",
         }
     };
+
+    
 
     // ================================================================= //
     //                      LOGIQUE DE TRADUCTION                      //
@@ -286,6 +292,39 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(section);
         });
     }
+
+    // ================================================================= //
+    //   NOUVEAU BLOC : MISE À JOUR DU HEADER LORS DU DÉFILEMENT         //
+    // ================================================================= //
+    const navLinksObserver = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('main section[id]');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 
+    };
+
+    const sectionObserverCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.id;
+                navLinksObserver.forEach(link => {
+                    link.classList.remove('active');
+                });
+                const activeLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+    };
+
+    const sectionObserver = new IntersectionObserver(sectionObserverCallback, observerOptions);
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
 
     // ================================================================= //
     //               GESTION DE L'ENVOI DU FORMULAIRE DE CONTACT         //
