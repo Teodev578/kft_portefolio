@@ -122,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             project_learn_more_3: "learn more ->",
             project_2_title: "GmailSorter — AI-powered email sorter",
             project_3_title: "AI ALGORITHM",
+            projects_github_link: "Discover more projects on my GitHub ➔",
             // Dialogs (Modals)
             dialog_bms_title: "<span class='dialog-title-symbol'>*</span>Bright Morning Star (BMS)",
             dialog_bms_short_desc: "Hardware store management application developed with Flutter and optimized for Windows, designed to automate sales, inventory, and customer management.",
@@ -277,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ================================================================= //
     //                  ANIMATIONS AU DÉFILEMENT (SCROLL)                //
     // ================================================================= //
-    const animatedSections = document.querySelectorAll(".services-new, .about-section, .projects-section, .contact-section-new");
+    const animatedSections = document.querySelectorAll(".services-new, .about-section, .projects-section, .contact-section-new, .github-link-container");
     if (animatedSections.length > 0) {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
