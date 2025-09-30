@@ -35,8 +35,8 @@ html {
 
 /* --- Thème Sombre --- */
 body.dark-mode {
-    --bg-color: #2A282A;
-    --text-color: #F5F0E8;
+    --bg-color: #2D2D2D;
+    --text-color: #FFF4E1;
     --border-color: #F5F0E8;
     --shadow-color: rgba(255, 255, 255, 0.05);
 
