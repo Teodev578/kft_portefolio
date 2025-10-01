@@ -5,9 +5,9 @@
 :root {
     /* --- Thème Clair (par défaut) --- */
     --bg-color: #ebe8df;
-    --text-color: #111111;
+    --text-color: #2e2b32;
     --accent-color: #FF4141;
-    --border-color: #111111;
+    --border-color: #2e2b32;
     --shadow-color: rgba(0, 0, 0, 0.07);
     
     /* --- Polices --- */
@@ -36,8 +36,8 @@ html {
 /* --- Thème Sombre --- */
 body.dark-mode {
     --bg-color: #2D2D2D;
-    --text-color: #D2C0AA;
-    --border-color: #F5F0E8;
+    --text-color: #f2ead7;
+    --border-color: #f2ead7;
     --shadow-color: rgba(255, 255, 255, 0);
 
     --section-bg: #1a1a1a;
