@@ -176,6 +176,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         // Met à jour l'attribut lang de la balise <html> pour le SEO et l'accessibilité
         document.documentElement.lang = lang;
+
+        // Met à jour le lien du CV
+        const cvDownloadLink = document.getElementById('cv-download-link');
+        if (cvDownloadLink) {
+            if (lang === 'fr') {
+                cvDownloadLink.href = 'assets/CV-Fr-Fabien-Téo-KPEKPASSI.pdf';
+            } else if (lang === 'en') {
+                cvDownloadLink.href = 'assets/CV-En-Fabien-Téo-KPEKPASSI.pdf';
+            }
+        }
     }
 
     languageLinks.forEach(link => {
