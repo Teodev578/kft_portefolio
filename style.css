@@ -904,16 +904,17 @@ body.dark-mode .image-wrapper:hover img {
 .contact-section-new.is-visible .contact-background-text { animation-delay: 0.7s; }
 
 /* ======================================================== */
-/*             RESPONSIVE & MENU MOBILE                     */
+/*             RESPONSIVE & MENU MOBILE (MIS À JOUR)        */
 /* ======================================================== */
 @media (max-width: 992px) {
     
+    /* --- Styles du menu burger (inchangés) --- */
     .header-right .main-nav {
-        display: none; /* Cache la nav desktop */
+        display: none;
     }
     
     .burger-menu {
-        display: block; /* Affiche le burger */
+        display: block;
     }
 
     #main-nav { 
@@ -935,7 +936,7 @@ body.dark-mode .image-wrapper:hover img {
     }
 
     #main-nav.nav-active .nav-links {
-        display: flex; /* Affiche les liens quand le menu est actif */
+        display: flex;
     }
 
     .nav-links { 
@@ -944,7 +945,7 @@ body.dark-mode .image-wrapper:hover img {
         align-items: center; 
         height: 100%; 
         gap: 2rem;
-        display: none; /* Cache les liens par défaut */
+        display: none;
     }
     
     .nav-links a { 
@@ -952,28 +953,34 @@ body.dark-mode .image-wrapper:hover img {
         font-weight: 700; 
     }
 
+    /* --- CORRECTIONS POUR LA SECTION ACCUEIL --- */
     .hero {
         padding-top: calc(var(--header-height) + 4rem);
+        min-height: auto; /* La hauteur s'adapte au contenu */
+        align-items: flex-start;
     }
     
     .hero-content-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Passage à une seule colonne */
         align-items: start;
-        gap: 4rem;
+        gap: 4rem; /* Espace entre le texte et l'image */
     }
 
     .hero-main-content {
-       align-items: flex-start;
        gap: 2.5rem;
     }
 
     .hero-text {
-        margin-bottom: 0; 
+        margin-bottom: 0; /* On retire la grande marge de 25vh inutile sur mobile */
         text-align: left;
     }
 
     .main-headline, .intro-text {
         text-align: left;
+    }
+    
+    .main-headline {
+        font-size: clamp(3.5rem, 15vw, 5rem); /* Taille de titre adaptée */
     }
 
     .hero-visual {
@@ -981,25 +988,55 @@ body.dark-mode .image-wrapper:hover img {
         width: 100%;
     }
 
-    .services-layout { 
-        grid-template-columns: 1fr; 
+    /* --- Ajustements pour la section Services --- */
+    .services-new {
+        padding-top: calc(var(--header-height) + 2rem);
+        min-height: auto; /* Permet à la section de ne pas occuper tout l'écran si le contenu est court */
     }
     
-    /* Responsive pour la nouvelle section contact */
+    .service-item {
+        display: block; /* On désactive la grille interne des services */
+    }
+
+    .service-item h3 {
+        margin-bottom: 0.75rem; /* On ajoute un espace sous le titre du service */
+    }
+
+    /* --- Ajustements pour la section À Propos --- */
+    .about-container {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    .about-details-grid {
+        grid-template-columns: 1fr; /* Empile les compétences, études, etc. */
+    }
+
+    .about-detail-item:not(:last-child) {
+        border-right: none; /* Supprime les bordures verticales entre les détails */
+        padding-right: 0;
+    }
+
+    /* --- Ajustements pour la section Projets --- */
+    .project-card-inner-container { padding: 1.5rem var(--site-margin); }
+    .card-number { font-size: 3rem; margin-right: 1.5rem; padding-right: 1.5rem; }
+    .card-content { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .card-title { font-size: 1.5rem; }
+    .card-tags { display: none; } /* On cache les tags pour simplifier */
+    .card-action { margin-left: 0; margin-top: 0.5rem; }
+
+    /* --- Ajustements pour la section Contact --- */
     .contact-container-new {
         grid-template-columns: 1fr; /* Passe à une seule colonne */
         gap: 4rem;
     }
 
     .contact-info-col {
-        padding-top: 6rem; /* Ajoute de l'espace pour ne pas chevaucher le formulaire */
-        align-items: flex-start;
+        padding-top: 2rem; /* Réduit l'espace pour un look plus compact */
     }
 
-    .contact-symbol {
-        top: 2rem;
-        right: 0;
-        font-size: 6rem;
+    .contact-cta-new {
+        position: static; /* Le texte "CONTACTEZ-MOI" retourne dans le flux normal */
+        margin-bottom: 2rem;
     }
 
     .contact-background-text {
@@ -1007,7 +1044,12 @@ body.dark-mode .image-wrapper:hover img {
         bottom: auto;
         left: auto;
         margin-top: 4rem;
-        font-size: clamp(4rem, 20vw, 8rem);
+        font-size: clamp(4rem, 20vw, 8rem); /* Taille de police adaptée */
+    }
+
+    .contact-details-group {
+        margin-top: 0;
+        margin-bottom: 2rem;
     }
 }
 
