@@ -1,5 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+     // ================================================================= //
+    //           GESTION DU PRELOADER (VERSION BARRE DE PROG.)           //
+    // ================================================================= //
+    const preloader = document.getElementById('preloader');
+    const progressBar = document.getElementById('progress-bar');
+    const progressCounter = document.getElementById('progress-counter');
+
+    if (preloader && progressBar && progressCounter) {
+        let progress = 0;
+        
+        // On simule une progression rapide au début
+        const interval = setInterval(() => {
+            progress += Math.random() * 10;
+            
+            // On s'assure de ne pas dépasser 90% avant que tout soit vraiment chargé
+            if (progress > 90) {
+                progress = 90;
+                clearInterval(interval);
+            }
+            
+            progressBar.style.width = progress + '%';
+            progressCounter.textContent = Math.round(progress) + '%';
+        }, 100); // Répète toutes les 100ms
+
+        // Quand la page est VRAIMENT chargée (images incluses), on termine l'animation.
+        window.addEventListener('load', () => {
+            // On arrête l'intervalle au cas où il tournerait encore
+            clearInterval(interval);
+
+            // On passe la barre à 100%
+            progressBar.style.width = '100%';
+            progressCounter.textContent = '100%';
+
+            // On attend un court instant pour que l'utilisateur voie les 100%
+            setTimeout(() => {
+                // On déclenche le fondu de sortie
+                document.body.classList.add('preloader-hidden');
+
+                // On supprime l'élément du DOM après l'animation pour la propreté
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500); // 500ms correspond à la durée de la transition CSS
+            }, 400); // Délai de 400ms
+        });
+    }
+
     // ================================================================= //
     //                      DICTIONNAIRE DE TRADUCTIONS                  //
     // ================================================================= //
@@ -427,3 +473,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+

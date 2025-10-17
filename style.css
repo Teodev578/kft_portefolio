@@ -1944,3 +1944,57 @@ body.dark-mode .dialog {
     position: relative;
     z-index: 1;
 }
+
+/* ======================================================== */
+/*           PRELOADER DE SITE (VERSION BARRE)              */
+/* ======================================================== */
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: var(--bg-color); /* Fond plein */
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Espace entre le logo, la barre et le texte */
+    /* Transition pour la disparition en fondu */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader-logo {
+    height: 50px; /* Taille du logo */
+    width: auto;
+}
+
+.progress-container {
+    width: 200px;
+    height: 4px; /* Hauteur de la barre */
+    border: 1px solid var(--border-color); /* Encadrement style brutaliste */
+    background-color: transparent;
+}
+
+#progress-bar {
+    width: 0%; /* Commence à 0 */
+    height: 100%;
+    background-color: var(--text-color); /* La barre se remplit avec la couleur du texte */
+    /* Transition douce pour le remplissage */
+    transition: width 0.3s ease-out;
+}
+
+#progress-counter {
+    font-family: var(--font-body); /* Police monospace pour un look technique */
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+
+/* --- Styles pour cacher le preloader --- */
+
+/* Lorsque le body a cette classe, le preloader disparaît en fondu */
+body.preloader-hidden #preloader {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
