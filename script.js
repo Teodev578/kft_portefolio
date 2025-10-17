@@ -104,6 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
             dialog_bms_p2: "L’application, développée avec Flutter, fonctionne actuellement sur Windows. Elle permet d’enregistrer les ventes, gérer les produits et les fournisseurs, suivre les dettes clients, et générer automatiquement des rapports PDF ou Excel.",
             dialog_bms_p3: "J’ai utilisé Firebase comme backend sécurisé (Authentication, Firestore, Realtime Database), assurant une synchronisation fluide des données, même en cas de coupure réseau temporaire. Une attention particulière a été portée à l’expérience utilisateur, avec une interface intuitive et un tableau de bord visuel.",
             dialog_bms_p4: "Ce projet démontre ma capacité à concevoir une application métier complète : architecture, UI/UX, gestion des données et déploiement via MSIX.",
+            dialog_bms_caption1: "Le tableau de bord principal offrant une vue d'ensemble en temps réel.",
+            dialog_bms_caption2: "L'interface de création et de gestion des factures au format PDF.",
             dialog_gmail_title: "<span class='dialog-title-symbol'>*</span>GmailSorter — IA de tri automatique des e-mails",
             dialog_gmail_short_desc: "Script Python intelligent qui analyse et trie automatiquement les e-mails Gmail à l’aide de l’IA Gemini et de l’API Gmail, en appliquant des libellés personnalisés.",
             dialog_gmail_p1: "Le projet GmailSorter répond à un besoin clair : automatiser le tri des e-mails pour gagner du temps et rester organisé. En combinant les capacités de l'IA générative Gemini avec les APIs Gmail, le script lit chaque e-mail, en extrait les métadonnées clés (expéditeur, sujet, extrait), et le classe intelligemment dans une catégorie définie (Professionnel, Factures, Publicité, etc.).",
@@ -176,6 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
             dialog_bms_p2: "The application, developed with Flutter, currently runs on Windows. It allows for recording sales, managing products and suppliers, tracking customer debts, and automatically generating PDF or Excel reports.",
             dialog_bms_p3: "I used Firebase as a secure backend (Authentication, Firestore, Realtime Database), ensuring smooth data synchronization, even during temporary network outages. Special attention was paid to the user experience, with an intuitive interface and a visual dashboard.",
             dialog_bms_p4: "This project demonstrates my ability to design a complete business application: architecture, UI/UX, data management, and deployment via MSIX.",
+            dialog_bms_caption1: "The main dashboard providing a real-time overview.",
+            dialog_bms_caption2: "The interface for creating and managing invoices in PDF format.",
             dialog_gmail_title: "<span class='dialog-title-symbol'>*</span>GmailSorter — AI-powered email sorter",
             dialog_gmail_short_desc: "An intelligent Python script that automatically analyzes and sorts Gmail emails using the Gemini AI and the Gmail API, applying custom labels.",
             dialog_gmail_p1: "The GmailSorter project addresses a clear need: automating email sorting to save time and stay organized. By combining the capabilities of the Gemini generative AI with Gmail APIs, the script reads each email, extracts key metadata (sender, subject, snippet), and intelligently classifies it into a defined category (Professional, Invoices, Promotions, etc.).",
@@ -197,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_social_ig: "Instagram",
             contact_social_li: "Linkedin",
         }
+        
     };
 
     

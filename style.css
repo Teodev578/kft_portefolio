@@ -1523,6 +1523,34 @@ body.dark-mode .project-card:hover {
 }
 
 /* ======================================================== */
+/*   AJOUT : STYLE POUR LES SCREENSHOTS DANS LES DIALOGUES  */
+/* ======================================================== */
+
+.dialog-screenshot {
+    /* Espace vertical pour aérer le contenu */
+    margin: 2.5rem auto; 
+    width: 95%; /* Occupe 95% de la largeur du corps du dialogue */
+    text-align: center; /* Centre l'image et la légende */
+}
+
+.dialog-screenshot img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Évite les espaces superflus sous l'image */
+    margin: 0 auto; /* Assure le centrage de l'image */
+    /* Bordure nette qui correspond à votre style brutaliste */
+    border: 2px solid var(--border-color);
+}
+
+.dialog-screenshot .caption {
+    font-family: var(--font-body);
+    font-size: 0.9rem; /* Légèrement plus petit que le texte principal */
+    color: var(--text-color);
+    opacity: 0.8; /* Rend la légende un peu moins proéminente */
+    margin-top: 0.75rem; /* Espace entre l'image et la légende */
+}
+
+/* ======================================================== */
 /*           LIEN GITHUB SOUS LES PROJETS (AJOUT)           */
 /* ======================================================== */
 .github-link-container {

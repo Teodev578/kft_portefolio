@@ -27,16 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- ======================================================== -->
-    <!--          PRELOADER AVEC BARRE (NOUVELLE VERSION)         -->
-    <!-- ======================================================== -->
-    <div id="preloader">
-        <img src="assets/logo-teo_compressed_final.png" alt="Logo Fabien Téo KPEKPASSi - Chargement..." class="preloader-logo">
-        <div class="progress-container">
-            <div id="progress-bar"></div>
-        </div>
-        <div id="progress-counter">0%</div>
-    </div>
+    
 
     <!-- ======================================================== -->
     <!--                  HEADER                                  -->
@@ -287,7 +278,7 @@
 </section>
 
 <!-- ======================================================== -->
-<!--     DIALOGUE POUR PROJET PRO (AVEC TRADUCTIONS)          -->
+<!--     DIALOGUE POUR PROJET PRO (AVEC SCREENSHOTS)          -->
 <!-- ======================================================== -->
 <div class="dialog" id="dialog-projet-pro">
   <div class="dialog-content">
@@ -297,6 +288,7 @@
       </div>
 
       <div class="dialog-header-content">
+        <!-- ... (Contenu du header inchangé) ... -->
         <h2 class="dialog-title" data-key="dialog_bms_title">
           <span class="dialog-title-symbol">*</span>Bright Morning Star (BMS)
         </h2>
@@ -308,6 +300,7 @@
         </div>
       </div>
 
+      <!-- MODIFICATION CI-DESSOUS -->
       <div class="dialog-body">
         <p data-key="dialog_bms_p1">
           Avant ce projet, la gestion de la quincaillerie reposait sur des méthodes manuelles lentes et sources d’erreurs. J’ai conçu une solution sur-mesure pour améliorer la productivité, suivre les ventes en temps réel et fiabiliser la facturation.
@@ -315,13 +308,32 @@
         <p data-key="dialog_bms_p2">
           L’application, développée avec Flutter, fonctionne actuellement sur Windows. Elle permet d’enregistrer les ventes, gérer les produits et les fournisseurs, suivre les dettes clients, et générer automatiquement des rapports PDF ou Excel.
         </p>
+
+        <!-- NOUVEAU : Bloc pour le premier screenshot -->
+        <div class="dialog-screenshot">
+            <!-- IMPORTANT : Remplacez par le vrai chemin de votre image -->
+            <img src="assets/screenshot_bms_dashboard.png" alt="Tableau de bord de l'application BMS affichant les ventes et les stocks.">
+            <!-- La légende est aussi traduisible grâce au data-key -->
+            <p class="caption" data-key="dialog_bms_caption1">Le tableau de bord principal offrant une vue d'ensemble en temps réel.</p>
+        </div>
+
         <p data-key="dialog_bms_p3">
           J’ai utilisé Firebase comme backend sécurisé (Authentication, Firestore, Realtime Database), assurant une synchronisation fluide des données, même en cas de coupure réseau temporaire. Une attention particulière a été portée à l’expérience utilisateur, avec une interface intuitive et un tableau de bord visuel.
         </p>
+
+        <!-- NOUVEAU : Bloc pour le second screenshot -->
+        <div class="dialog-screenshot">
+            <!-- IMPORTANT : Remplacez par le vrai chemin de votre image -->
+            <img src="assets/screenshot_bms_invoice.png" alt="Interface de facturation de l'application BMS.">
+            <p class="caption" data-key="dialog_bms_caption2">L'interface de création et de gestion des factures au format PDF.</p>
+        </div>
+
         <p data-key="dialog_bms_p4">
           Ce projet démontre ma capacité à concevoir une application métier complète : architecture, UI/UX, gestion des données et déploiement via MSIX.
         </p>
       </div>
+      <!-- FIN DE LA MODIFICATION -->
+
     </div>
     <button class="dialog-close" aria-label="Fermer la fenêtre" data-key="dialog_close">X Fermer</button>
   </div>
