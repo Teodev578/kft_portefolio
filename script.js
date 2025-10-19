@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             project_learn_more_2: "en savoir plus →",
             project_learn_more_3: "en savoir plus ->",
             project_2_title: "GmailSorter — IA de tri automatique d’e-mails",
-            project_3_title: "ALGORITHME IA",
+            project_3_title: "PROGICIEL IA QUINCAILLERIE",
 
             // AJOUTEZ CETTE LIGNE
             projects_github_link: "Découvrez plus de projets sur mon GitHub ➔",
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dialog_gmail_p1: "Le projet GmailSorter répond à un besoin clair : automatiser le tri des e-mails pour gagner du temps et rester organisé. En combinant les capacités de l'IA générative Gemini avec les APIs Gmail, le script lit chaque e-mail, en extrait les métadonnées clés (expéditeur, sujet, extrait), et le classe intelligemment dans une catégorie définie (Professionnel, Factures, Publicité, etc.).",
             dialog_gmail_p2: "Le script fonctionne par lots, applique les libellés automatiquement, et peut archiver les mails traités. Il inclut une gestion robuste des erreurs via retries exponentiels, un mode “Dry Run” pour les tests, et un résumé statistique à chaque exécution.",
             dialog_gmail_p3: "J'ai développé ce projet pour explorer l'intégration d'une IA générative dans un usage concret, tout en respectant les bonnes pratiques de modularité, sécurité (OAuth2, clés API dans .env), et clarté du code. Ce fut une excellente opportunité pour solidifier mes compétences en automatisation, en APIs Google, et en design d’outils pratiques.",
-            dialog_school_content: "Le contenu détaillé du projet scolaire apparaîtra ici.",
+            dialog_school_content: "En cours de dévellopement.",
             dialog_close: "X Fermer",
             dialog_close_2: "X Fermer",
             dialog_close_3: "X Fermer",
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
             project_learn_more_2: "learn more →",
             project_learn_more_3: "learn more ->",
             project_2_title: "GmailSorter — AI-powered email sorter",
-            project_3_title: "AI ALGORITHM",
+            project_3_title: "AI HARDWARE SOFTWARE PACKAGE",
             projects_github_link: "Discover more projects on my GitHub ➔",
             // Dialogs (Modals)
             dialog_bms_title: "<span class='dialog-title-symbol'>*</span>Bright Morning Star (BMS)",
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dialog_gmail_p1: "The GmailSorter project addresses a clear need: automating email sorting to save time and stay organized. By combining the capabilities of the Gemini generative AI with Gmail APIs, the script reads each email, extracts key metadata (sender, subject, snippet), and intelligently classifies it into a defined category (Professional, Invoices, Promotions, etc.).",
             dialog_gmail_p2: "The script operates in batches, applies labels automatically, and can archive processed emails. It includes robust error handling with exponential backoff, a 'Dry Run' mode for testing, and a statistical summary after each execution.",
             dialog_gmail_p3: "I developed this project to explore the integration of a generative AI into a practical use case, while adhering to best practices in modularity, security (OAuth2, API keys in .env), and code clarity. It was an excellent opportunity to solidify my skills in automation, Google APIs, and practical tool design.",
-            dialog_school_content: "Detailed content for the school project will appear here.",
+            dialog_school_content: "Under development.",
             dialog_close: "X Close",
             dialog_close_2: "X Close",
             dialog_close_3: "X Close",
