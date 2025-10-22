@@ -955,7 +955,7 @@ body.dark-mode .image-wrapper:hover img {
 
     /* --- CORRECTIONS POUR LA SECTION ACCUEIL --- */
     .hero {
-        padding-top: calc(var(--header-height) + 4rem);
+        /*padding-top: calc(var(--header-height) + 4rem);*/
         min-height: auto; /* La hauteur s'adapte au contenu */
         align-items: flex-start;
     }
