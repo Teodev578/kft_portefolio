@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_cv_btn: "télécharger mon CV",
             hero_scroll_services: "↓ Mes services",
             // Section Services
-            services_title: "*SERVICES",
+            services_title: "SERVICES",
             service_1_title: "*Développement sur mesure",
             service_1_desc: "Création d'outils web et mobiles pensés pour votre métier, avec une attention portée sur l'efficacité, la simplicité et l'expérience utilisateur.",
             service_2_title: "*Automatisation de vos tâches",
@@ -82,7 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
             about_skills_title: "Compétences :",
             about_skills_content: `<ul><li>-Recherche et dévellopement : 5/5</li><li>-Flutter : 4/5</li><li>-Figma : 4/5</li><li>-Python : 4/5</li><li>-UX/UI : 4/5</li></ul>`,
             about_exp_title: "Experience clé :",
-            about_exp_content: "- Bien que je n'aie pas encore eu d'expérience en entreprise, j'ai eu l'occasion de développer un projet complet pour une quincaillerie, utilisé en conditions réelles.",
+            about_exp_content_title: "<strong>-Développeur Flutter</strong>",
+            about_exp_content_list: `<ul>
+                        <em>* Quincaillerie Bright Morning Star (BMS) Lomé, Togo | 2025</em>
+                        <li>Conception et développement d’une application de gestion des ventes pour une PME locale.</li>
+                        <li>Intégration des modules de gestion des produits, clients, fournisseurs et ventes.</li>
+                        <li>Utilisation de Firebase Firestore pour le stockage en ligne.</li>
+                    </ul>`,
             about_scroll_projects: "↓ Quelques projets",
             // Section Projets
             projects_header_title: "MES PROJETS",
@@ -141,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_cv_btn: "download my resume",
             hero_scroll_services: "↓ My services",
             // Services Section
-            services_title: "*SERVICES",
+            services_title: "SERVICES",
             service_1_title: "*Custom Development",
             service_1_desc: "Creation of web and mobile tools designed for your business, with a focus on efficiency, simplicity, and user experience.",
             service_2_title: "*Task Automation",
@@ -159,7 +165,13 @@ document.addEventListener('DOMContentLoaded', () => {
             about_skills_title: "Skills:",
             about_skills_content: `<ul><li>-Research and Development: 5/5</li><li>-Flutter: 4/5</li><li>-Figma: 4/5</li><li>-Python: 4/5</li><li>-UX/UI: 4/5</li></ul>`,
             about_exp_title: "Key Experience:",
-            about_exp_content: "- Although I have not yet had corporate experience, I had the opportunity to develop a complete project for a hardware store, which is used in real-world conditions.",
+            about_exp_content_title: "<strong>Flutter Developer</strong>, Bright Morning Star (BMS) Hardware Store Lomé, Togo | 2025",
+            about_exp_content_list: `<ul>
+                        <em>* Bright Morning Star (BMS) Hardware Store Lomé, Togo | 2025</em>
+                        <li>Design and development of a sales management application for a local SME.</li>
+                        <li>Integration of product, customer, supplier, and sales management modules.</li>
+                        <li>Use of Firebase Firestore for online storage.</li>
+                    </ul>`,
             about_scroll_projects: "↓ Some projects",
             // Projects Section
             projects_header_title: "MY PROJECTS",
@@ -478,4 +490,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
