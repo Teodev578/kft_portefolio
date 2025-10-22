@@ -38,7 +38,7 @@ body.dark-mode {
     --bg-color: #2D2D2D;
     --text-color: #f2ead7;
     --border-color: #f2ead7;
-    --shadow-color: rgba(255, 255, 255, 0);
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Adjusted for subtle blending in dark mode, similar to light theme */
 
     --section-bg: #1a1a1a;
     --section-alt-bg: #111111;
@@ -60,7 +60,7 @@ body {
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Increased transition duration */
     overflow-x: hidden;
 }
 
@@ -92,7 +92,7 @@ header {
     left: 0;
     z-index: 100;
     background-color: transparent;
-    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+    transition: background-color 0.5s ease, backdrop-filter 0.5s ease, box-shadow 0.5s ease; /* Increased transition duration */
 }
 
 header.scrolled {
@@ -166,6 +166,7 @@ body.dark-mode header.scrolled {
     color: var(--text-color); 
     padding: 5px; 
     display: flex;
+    transition: color 0.5s ease; /* Add transition for theme toggle icon color */
 }
 
 .theme-toggle .moon-icon { display: none; }
@@ -225,6 +226,26 @@ body.dark-mode .theme-toggle .sun-icon { display: none; }
 .lang-link.active {
     opacity: 1;
     color: var(--accent-color);
+}
+
+/* Animation pour le changement de langue */
+@keyframes languageChangeAnimation {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.language-switcher.animate {
+    animation: languageChangeAnimation 0.4s ease-out;
 }
 
 /* ========================================================================= */
@@ -1447,7 +1468,7 @@ body.dark-mode .image-wrapper:hover img {
 .project-card {
     border-bottom: 2px solid var(--border-color);
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.5s ease; /* Add transition for border-color */
 }
 
 .project-card:last-child {
@@ -1813,6 +1834,7 @@ body.dark-mode .dialog {
     overflow-y: auto;  /* Barre de scroll UNIQUEMENT si le contenu dépasse */
     display: flex;
     flex-direction: column;
+    transition: background-color 0.5s ease, border-color 0.5s ease; /* Add transition for dialog content */
 }
 
 /* 
@@ -1828,12 +1850,14 @@ body.dark-mode .dialog {
         "body   body";
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 2rem; /* Espace avant la ligne de séparation */
+    transition: border-color 0.5s ease; /* Add transition for dialog main layout border */
 }
 
 .dialog-visual {
     grid-area: visual;
     border: 2px solid var(--border-color);
     align-self: start;
+    transition: border-color 0.5s ease; /* Add transition for dialog visual border */
 }
 
 .dialog-visual img {
@@ -1890,6 +1914,7 @@ body.dark-mode .dialog {
     grid-area: body;
     padding-top: 2rem;
     border-top: 2px solid var(--border-color);
+    transition: border-color 0.5s ease; /* Add transition for dialog body border */
 }
 
 .dialog-body p {
@@ -2009,13 +2034,14 @@ body.dark-mode .dialog {
     height: 100%;
     background-color: var(--text-color); /* La barre se remplit avec la couleur du texte */
     /* Transition douce pour le remplissage */
-    transition: width 0.3s ease-out;
+    transition: width 0.3s ease-out, background-color 0.5s ease; /* Add transition for progress bar background-color */
 }
 
 #progress-counter {
     font-family: var(--font-body); /* Police monospace pour un look technique */
     font-size: 1rem;
     color: var(--text-color);
+    transition: color 0.5s ease; /* Add transition for progress counter color */
 }
 
 

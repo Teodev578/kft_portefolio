@@ -222,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //                      LOGIQUE DE TRADUCTION                      //
     // ================================================================= //
     const languageLinks = document.querySelectorAll('.lang-link');
+    const languageSwitcher = document.querySelector('.language-switcher'); // Get the language switcher element
     
     function translatePage(lang) {
         const translatableElements = document.querySelectorAll('[data-key]');
@@ -264,6 +265,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Sauvegarde le choix dans le localStorage
             localStorage.setItem('language', selectedLang);
+
+            // Trigger the animation
+            if (languageSwitcher) {
+                languageSwitcher.classList.remove('animate'); // Remove to re-trigger
+                void languageSwitcher.offsetWidth; // Trigger reflow
+                languageSwitcher.classList.add('animate');
+            }
         });
     });
 
