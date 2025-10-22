@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_projects: "Projets",
             nav_contact: "Contacts",
             // Section Héros
-            hero_headline: "DÉVELOPPEUR",
+            hero_headline: "DEVELOPPEUR",
             hero_intro: "Je suis Fabien Téo KPEKPASSi, développeur créatif. Je conçois des solutions logicielles efficaces pour automatiser vos tâches, optimiser vos processus métier et vous faire gagner du temps comme de l'argent.",
             hero_contact_btn: "Contactez-moi",
             hero_cv_btn: "télécharger mon CV",
